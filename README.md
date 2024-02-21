@@ -1,5 +1,6 @@
 # leather-handcrafed
 
+icon header color: #d09939
 Leather Handcrafed
 
 # React + Vite
