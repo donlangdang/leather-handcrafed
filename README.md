@@ -1,6 +1,7 @@
 # leather-handcrafed
 
 icon header color: #d09939
+color schema: https://colorhunt.co/palette/6b240c994d1ce48f45f5cca0
 Leather Handcrafed
 
 # React + Vite
