@@ -1,12 +1,10 @@
-import Button from '@mui/material/Button'
-import { Box } from '@mui/material'
-import ButtonBaseDemo from './navBar/navBar'
+import NavBar from './navBar/navBar'
 
 function App() {
 
   return (
     <>
-      <ButtonBaseDemo />
+      <NavBar />
     </>
   )
 }
