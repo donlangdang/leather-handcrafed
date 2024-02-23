@@ -2,16 +2,16 @@ import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
 const theme = extendTheme({
   colorSchemes: {
-    dark: {
+    light: {
       palette: {
+        mode: 'light',
         background: {
-          default: '#F5CCA0',
-          paper: '#F5CCA0'
         }
       }
     }
   }
 })
-console.log('theme: ', theme)
+delete theme.colorSchemes.dark
+
 
 export default theme

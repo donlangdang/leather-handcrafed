@@ -1,5 +1,6 @@
 import NavBar from './navBar/navBar'
 
+
 function App() {
 
   return (

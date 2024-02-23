@@ -1,22 +1,22 @@
-import { Button } from '@mui/material'
 import MyButton from './myButtom'
 import Box from '@mui/material/Box'
 
+
+const headerTitle = ['Trang Chủ', 'Sản Phẩm', 'Giới Thiệu', 'Liên Hệ']
 
 function NavBar() {
   return (
     <Box sx={{
       height: '9vh',
-      // backgroundColor: (theme) => theme.colorSchemes.light.palette.background.paper,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
     }}>
-      <MyButton>Trang Chủ</MyButton>
-      <MyButton>Sản Phẩm</MyButton>
-      <MyButton>Giới Thiệu</MyButton>
-      <MyButton>Liên Hệ</MyButton>
-      <Button>asd</Button>
+      {headerTitle.map((headerTitle) => (
+        <MyButton key={headerTitle}>
+          {headerTitle}
+        </MyButton>
+      ))}
     </Box>
   )
 }
