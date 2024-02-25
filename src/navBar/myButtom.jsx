@@ -4,22 +4,23 @@ import { ButtonBase, styled } from '@mui/material'
 const MyButton = styled(ButtonBase)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
   fontSize: 'medium',
-  padding: '4px 8px',
-  margin: '10px 20px',
+  padding: '10px 20px',
+  margin: '4px 8px',
   fontWeight: 'bold',
   position: 'relative',
   '&::after': {
     content: '""',
     height: '2px',
-    width: '0px',
+    width: '100%',
     background: '#994D1C',
+    borderRadius: '50px',
     position: 'absolute',
-    bottom: '0px',
-    left: '0',
-    transition: 'all 0.4s ease-in-out'
+    bottom: '4px',
+    transform: 'scaleX(0)',
+    transition: 'transform 0.2s linear'
   },
   '&:hover::after': {
-    width: '100%'
+    transform: 'scaleX(1)'
   }
 }))
 
