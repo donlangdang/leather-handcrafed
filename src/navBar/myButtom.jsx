@@ -8,6 +8,7 @@ const MyButton = styled(ButtonBase)(({ theme }) => ({
   margin: '4px 8px',
   fontWeight: 'bold',
   position: 'relative',
+  color: '#6B240C',
   '&::after': {
     content: '""',
     height: '2px',

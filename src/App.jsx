@@ -1,4 +1,4 @@
-import NavBar from './navBar/navBar'
+import NavBar from '~/navBar/navBar'
 
 
 function App() {

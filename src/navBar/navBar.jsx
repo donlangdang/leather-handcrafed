@@ -1,10 +1,12 @@
 import React from 'react'
+import leatherIcon from '~/assets/leather.svg?react'
+import SvgIcon from '@mui/material/SvgIcon'
 import MyButton from './myButtom'
-import Box from '@mui/material/Box'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { ReactComponent as leatherIcon } from '../../src/assets/leather.svg'
-import SvgIcon from '@mui/material/SvgIcon'
+import { Box } from '@mui/material'
+import LanguageIcon from '@mui/icons-material/Language'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 
 
 // const headerTitle = ['Trang Chủ', 'Sản Phẩm', 'Giới Thiệu', 'Liên Hệ']
@@ -12,9 +14,9 @@ import SvgIcon from '@mui/material/SvgIcon'
 function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
-  const handleClick = (e) => {
-    setAnchorEl(e.currentTarget)
-    // console.log(e.currentTarget)
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+    console.log(event.currentTarget)
   }
   const handleClose = () => {
     setAnchorEl(null)
@@ -27,82 +29,100 @@ function NavBar() {
       alignItems: 'center',
       justifyContent: 'center',
       bgcolor: '#F5CCA0',
-      gap: 0
+      gap: 1,
+      position: 'relative'
     }}>
       <Box sx={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'left',
-        // position: 'absolute',
-        // width: '100%',
-        gap: 200
+        justifyContent: 'space-between',
+        gap: 1,
+        position: 'absolute',
+        left: 5,
+        color: '#6B240C'
       }}
       >
-        asasd
-        <SvgIcon component={leatherIcon} fontSize='mdeium' inheritViewBox sx={{ color: '#6B240C' }} />
+        <SvgIcon component={leatherIcon} fontSize='large' inheritViewBox
+        />
+        GoDa Decor
       </Box>
-      <MyButton>Trang Chủ</MyButton>
-      <MyButton
-        // id="basic-menu-items"
-        // aria-controls={open ? 'my-button-items' : undefined}
-        // aria-haspopup="true"
-        // aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
+      <Box>
+        <MyButton>Trang Chủ</MyButton>
+        <MyButton
+          // id="basic-menu-items"
+          // aria-controls={open ? 'my-button-items' : undefined}
+          // aria-haspopup="true"
+          // aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
+          Sản Phẩm
+        </MyButton>
+        <Menu
+          // id="my-button-items"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          // MenuListProps={{
+          //   'aria-labelledby': 'basic-menu-items'
+          // }}
+        >
+          <MenuItem
+            onClick={handleClose}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <MyButton>Ví Da, Ví Zip</MyButton>
+          </MenuItem>
+          <MenuItem
+            onClick={handleClose}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <MyButton>Dây Đồng Hồ</MyButton>
+          </MenuItem>
+          <MenuItem
+            onClick={handleClose}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <MyButton>Cặp,Túi xách</MyButton>
+          </MenuItem>
+          <MenuItem
+            onClick={handleClose}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <MyButton>Đồ Decor</MyButton>
+          </MenuItem>
+        </Menu>
+        <MyButton>Giới Thiệu</MyButton>
+        <MyButton>Liên Hệ</MyButton>
+      </Box>
+      <Box sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 1,
+        position: 'absolute',
+        right: 5,
+        color: '#6B240C'
+      }}
       >
-        Sản Phẩm
-      </MyButton>
-      <Menu
-        // id="my-button-items"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        // MenuListProps={{
-        //   'aria-labelledby': 'basic-menu-items'
-        // }}
-      >
-        <MenuItem
-          onClick={handleClose}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <MyButton>Ví Da, Ví Zip</MyButton>
-        </MenuItem>
-        <MenuItem
-          onClick={handleClose}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <MyButton>Dây Đồng Hồ</MyButton>
-        </MenuItem>
-        <MenuItem
-          onClick={handleClose}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <MyButton>Cặp,Túi xách</MyButton>
-        </MenuItem>
-        <MenuItem
-          onClick={handleClose}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <MyButton>Đồ Decor</MyButton>
-        </MenuItem>
-      </Menu>
-      <MyButton>Giới Thiệu</MyButton>
-      <MyButton>Liên Hệ</MyButton>
+        <LanguageIcon fontSize='medium' sx={{ cursor: 'pointer' }}
+        />
+      </Box>
     </Box>
   )
 }
