@@ -9,9 +9,13 @@ const theme = extendTheme({
         }
       }
     }
+  },
+  typography: {
+    fontFamily: ['"Poppins"', 'sans-serif'].join(', ')
   }
 })
-delete theme.colorSchemes.dark
+console.log(theme)
+// delete theme.colorSchemes.dark
 
 
 export default theme

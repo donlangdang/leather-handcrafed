@@ -4,10 +4,10 @@ import { ButtonBase, styled } from '@mui/material'
 const MyButton = styled(ButtonBase)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
   fontSize: 'medium',
-  padding: '10px 20px',
-  margin: '4px 8px',
-  fontWeight: 'bold',
+  fontWeight: '500',
   position: 'relative',
+  marginLeft: '10px',
+  marginRight: '10px',
   color: '#6B240C',
   '&::after': {
     content: '""',
@@ -16,7 +16,7 @@ const MyButton = styled(ButtonBase)(({ theme }) => ({
     background: '#994D1C',
     borderRadius: '50px',
     position: 'absolute',
-    bottom: '4px',
+    bottom: '1px',
     transform: 'scaleX(0)',
     transition: 'transform 0.2s linear'
   },

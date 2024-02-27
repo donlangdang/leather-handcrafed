@@ -6,7 +6,8 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import { Box } from '@mui/material'
 import LanguageIcon from '@mui/icons-material/Language'
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import IconButton from '@mui/material/IconButton'
 
 
 // const headerTitle = ['Trang Chủ', 'Sản Phẩm', 'Giới Thiệu', 'Liên Hệ']
@@ -16,7 +17,7 @@ function NavBar() {
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
-    console.log(event.currentTarget)
+    // console.log(event.currentTarget)
   }
   const handleClose = () => {
     setAnchorEl(null)
@@ -29,17 +30,20 @@ function NavBar() {
       alignItems: 'center',
       justifyContent: 'center',
       bgcolor: '#F5CCA0',
-      gap: 1,
       position: 'relative'
     }}>
       <Box sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        gap: 1,
+        gap: 0.5,
+        paddingLeft: 2,
         position: 'absolute',
-        left: 5,
-        color: '#6B240C'
+        left: 0,
+        color: '#6B240C',
+        fontWeight: '500',
+        cursor: 'pointer',
+        userSelect: 'none'
       }}
       >
         <SvgIcon component={leatherIcon} fontSize='large' inheritViewBox
@@ -56,6 +60,7 @@ function NavBar() {
           onClick={handleClick}
         >
           Sản Phẩm
+          <KeyboardArrowDownIcon fontSize='small' />
         </MyButton>
         <Menu
           // id="my-button-items"
@@ -120,8 +125,9 @@ function NavBar() {
         color: '#6B240C'
       }}
       >
-        <LanguageIcon fontSize='medium' sx={{ cursor: 'pointer' }}
-        />
+        <IconButton>
+          <LanguageIcon fontSize='medium' sx={{ cursor: 'pointer' }} />
+        </IconButton>
       </Box>
     </Box>
   )
