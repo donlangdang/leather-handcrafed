@@ -126,7 +126,7 @@ function NavBar() {
       }}
       >
         <IconButton>
-          <LanguageIcon fontSize='medium' sx={{ cursor: 'pointer' }} />
+          <LanguageIcon fontSize='medium' sx={{ cursor: 'pointer', color: '#6B240C' }} />
         </IconButton>
       </Box>
     </Box>
