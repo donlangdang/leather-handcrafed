@@ -8,6 +8,7 @@ function App() {
     <>
       <NavBar />
       <BannerSlider />
+      Làm các thẻ và thông tin
     </>
   )
 }

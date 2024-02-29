@@ -26,11 +26,13 @@ function NavBar() {
   return (
     <Box sx={{
       height: '9vh',
+      width: '100%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      bgcolor: '#F5CCA0',
-      position: 'relative'
+      bgcolor: 'rgba(255, 255, 255, 0)',
+      position: 'relative',
+      zIndex: '100'
     }}>
       <Box sx={{
         display: 'flex',
