@@ -31,8 +31,8 @@ function NavBar() {
       alignItems: 'center',
       justifyContent: 'center',
       bgcolor: 'rgba(255, 255, 255, 0)',
-      position: 'relative',
-      zIndex: '100'
+      position: 'fixed',
+      zIndex: '1000'
     }}>
       <Box sx={{
         display: 'flex',

@@ -1,8 +1,12 @@
 {
-  "name": "vite-project",
+  "name": "leather-decor",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "dinhcongdon",
+  "engines": {
+    "node": "20.11.1"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
