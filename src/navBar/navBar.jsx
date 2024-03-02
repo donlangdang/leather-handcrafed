@@ -29,7 +29,6 @@ function NavBar() {
       width: '100%',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
       bgcolor: 'rgba(255, 255, 255, 0)',
       position: 'fixed',
       zIndex: '1000'
@@ -37,22 +36,27 @@ function NavBar() {
       <Box sx={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: 0.5,
+        justifyContent: 'start',
+        gap: 1,
         paddingLeft: 2,
-        position: 'absolute',
-        left: 0,
-        color: '#6B240C',
-        fontWeight: '500',
+        fontWeight: '700',
+        fontSize: 'large',
         cursor: 'pointer',
-        userSelect: 'none'
+        userSelect: 'none',
+        flex: 1
       }}
       >
         <SvgIcon component={leatherIcon} fontSize='large' inheritViewBox
         />
         GoDa Decor
       </Box>
-      <Box>
+      <Box sx={{
+        flex: 3,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+      >
         <MyButton>Trang Chủ</MyButton>
         <MyButton
           // id="basic-menu-items"
@@ -120,15 +124,13 @@ function NavBar() {
       <Box sx={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: 1,
-        position: 'absolute',
-        right: 5,
-        color: '#6B240C'
+        justifyContent: 'end',
+        flex: 1,
+        paddingRight: 1
       }}
       >
         <IconButton>
-          <LanguageIcon fontSize='medium' sx={{ cursor: 'pointer', color: '#6B240C' }} />
+          <LanguageIcon fontSize='large' sx={{ cursor: 'pointer', color: 'black' }} />
         </IconButton>
       </Box>
     </Box>

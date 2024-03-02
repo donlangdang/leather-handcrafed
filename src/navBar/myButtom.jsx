@@ -3,12 +3,11 @@ import { ButtonBase, styled } from '@mui/material'
 
 const MyButton = styled(ButtonBase)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
-  fontSize: 'medium',
+  fontSize: 'large',
   fontWeight: '500',
   position: 'relative',
   marginLeft: '10px',
   marginRight: '10px',
-  color: '#6B240C',
   '&::after': {
     content: '""',
     height: '2px',
