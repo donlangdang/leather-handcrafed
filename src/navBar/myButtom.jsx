@@ -12,7 +12,7 @@ const MyButton = styled(ButtonBase)(({ theme }) => ({
     content: '""',
     height: '2px',
     width: '100%',
-    background: '#994D1C',
+    background: '#6B240C',
     borderRadius: '10%',
     position: 'absolute',
     bottom: '1px',
