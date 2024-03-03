@@ -1,7 +1,32 @@
 import images from '~/apis/images'
 import MyButton from '~/navBar/myButtom'
-import { Box, Typography } from '@mui/material'
+import { Box, ButtonBase, Typography } from '@mui/material'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import { keyframes } from '@mui/material'
 
+const contentKeyFrame = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(0, 100%);
+    filter: blur(20px)
+  }
+  to {
+    opacity: 1;
+    transform: translate(0,0);
+    filter: blur(0)
+  }
+`
+const cardKeyFrame = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(0, 100%)
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0)
+  }
+`
 
 function bannerSlider() {
   return (
@@ -14,7 +39,7 @@ function bannerSlider() {
     >
       <Box
         sx={{
-          backgroundImage: `url(${images[1].url})`,
+          backgroundImage: `linear-gradient(0, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${images[1].url})`,
           width: '100%',
           height: '100%',
           backgroundSize: 'cover',
@@ -27,26 +52,27 @@ function bannerSlider() {
             position: 'absolute',
             top: '15%',
             left: '5%',
-            // transform: 'translate(0,-50%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             justifyItems: 'center',
             flexDirection: 'column',
             width: '40%',
-            height: '50%'
+            height: '50%',
+            color: 'white'
           }}
         >
-          <Typography variant="h4" align='center' gutterBottom>
+          <Typography sx={{ animation: `${contentKeyFrame} 2s ease-in-out 1 forwards` }} variant="h4" align='center' gutterBottom>
             {images[1].title}
           </Typography>
-          <Typography variant='h7' align='center' gutterBottom>
+          <Typography sx={{ animation: `${contentKeyFrame} 2.3s ease-in-out 1 forwards` }} variant='h7' align='center' gutterBottom>
             Ở đây chúng tôi làm về đồ da thật thủ công bao gồm túi xách, ví, dây đồng hồ,.... Với kinh nghiệm lâu năm tỉ mỉ và chi tiết từng đường nét. Ngoài ra còn kết hợp Decor nội thất giữa gỗ và da theo yêu cầu và ý thích của khách hàng
           </Typography>
           <MyButton
             sx={{
+              animation: `${contentKeyFrame} 2.6s ease-in-out 1 forwards`,
               padding: '8px 5px',
-              bgcolor: '#F5CCA0',
+              bgcolor: '#994D1C',
               margin: 0,
               border: '1px solid #6B240C',
               '&::after': {
@@ -65,13 +91,14 @@ function bannerSlider() {
             backgroundPosition: 'center',
             height: '30%',
             width: '10%',
-            border: '5px solid #F5CCA0',
-            boxShadow: '5px 5px 5px 5px #994D1C',
+            border: '5px solid #6B240C',
+            // boxShadow: '5px 5px 5px 5px #994D1C',
             position: 'absolute',
             bottom: '50px',
-            right: '50%'
+            right: '50%',
+            animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`
           }}
-        ></Box>
+        >hình 1</Box>
         <Box
           sx={{
             backgroundImage: `url(${images[1].url})`,
@@ -80,11 +107,12 @@ function bannerSlider() {
             backgroundPosition: 'center',
             height: '30%',
             width: '10%',
-            border: '5px solid #F5CCA0',
-            boxShadow: '5px 5px 5px 5px #994D1C',
+            border: '5px solid #6B240C',
+            // boxShadow: '5px 5px 5px 5px #994D1C',
             position: 'absolute',
             bottom: '50px',
-            right: 'calc(50% - 10% - 20px)'
+            right: 'calc(50% - 10% - 20px)',
+            animation: `${cardKeyFrame} 0.7s ease-in-out 1 forwards`
           }}
         >hình 2</Box>
         <Box
@@ -95,11 +123,12 @@ function bannerSlider() {
             backgroundPosition: 'center',
             height: '30%',
             width: '10%',
-            border: '5px solid #F5CCA0',
-            boxShadow: '5px 5px 5px 5px #994D1C',
+            border: '5px solid #6B240C',
+            // boxShadow: '5px 5px 5px 5px #994D1C',
             position: 'absolute',
             bottom: '50px',
-            right: 'calc(50% - 20% - 40px)'
+            right: 'calc(50% - 20% - 40px)',
+            animation: `${cardKeyFrame} 0.9s ease-in-out 1 forwards`
           }}
         >hình 3</Box>
         <Box
@@ -110,11 +139,12 @@ function bannerSlider() {
             backgroundPosition: 'center',
             height: '30%',
             width: '10%',
-            border: '5px solid #F5CCA0',
-            boxShadow: '5px 5px 5px 5px #994D1C',
+            border: '5px solid #6B240C',
+            // boxShadow: '5px 5px 5px 5px #994D1C',
             position: 'absolute',
             bottom: '50px',
-            right: 'calc(50% - 30% - 60px)'
+            right: 'calc(50% - 30% - 60px)',
+            animation: `${cardKeyFrame} 1.1s ease-in-out 1 forwards`
           }}
         >hình 4</Box>
         <Box
@@ -125,13 +155,34 @@ function bannerSlider() {
             backgroundPosition: 'center',
             height: '30%',
             width: '10%',
-            border: '5px solid #F5CCA0',
-            boxShadow: '5px 5px 5px 5px #994D1C',
+            border: '5px solid #6B240C',
+            // boxShadow: '5px 5px 5px 5px #994D1C',
             position: 'absolute',
             bottom: '50px',
-            right: 'calc(50% - 40% - 80px)'
+            right: 'calc(50% - 40% - 80px)',
+            animation: `${cardKeyFrame} 1.3s ease-in-out 1 forwards`
           }}
         >hình 5</Box>
+        <Box
+          sx={{
+            position: 'absolute',
+            right: 'calc(50% + 10% + 20px)',
+            bottom: 'calc(15% + 50px)',
+            transform: 'translate(0, 50%)',
+            animation: `${cardKeyFrame} 0.3s ease-in-out 1 forwards`
+          }}
+        >
+          <ButtonBase
+            sx={{ bgcolor: '#994D1C', borderRadius: '50%', border: '1px solid #6B240C', color: 'white' }}
+          >
+            <ChevronLeftIcon fontSize='large'/>
+          </ButtonBase>
+          <ButtonBase
+            sx={{ bgcolor: '#994D1C', borderRadius: '50%', border: '1px solid #6B240C', color: 'white' }}
+          >
+            <ChevronRightIcon fontSize='large'/>
+          </ButtonBase>
+        </Box>
       </Box>
     </Box>
   )
