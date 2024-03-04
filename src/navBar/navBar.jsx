@@ -1,9 +1,8 @@
-import IconButton from '@mui/material/IconButton'
 import Logo from './logo/logo'
 import CenterNavbar from './centerNavbar/centerNavbar'
-import LanguageIcon from '@mui/icons-material/Language'
 import { keyframes } from '@mui/material'
 import { Box } from '@mui/material'
+import Language from './language/language'
 
 const navBarKeyFrame = keyframes`
   from {
@@ -21,33 +20,22 @@ const navBarKeyFrame = keyframes`
 function NavBar() {
 
   return (
-    <Box sx={{
-      height: '9vh',
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'fixed',
-      zIndex: '1000',
-      color: 'white',
-      opacity: 0,
-      animation: `${navBarKeyFrame} 1.5s ease-in-out 1 forwards`
-    }}>
+    <Box
+      sx={{
+        height: '9vh',
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-betweem',
+        position: 'fixed',
+        zIndex: '1000',
+        color: 'white',
+        opacity: 0,
+        animation: `${navBarKeyFrame} 1.5s ease-in-out 1 forwards`
+      }}>
       <Logo />
       <CenterNavbar />
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'end',
-          flex: 1,
-          paddingRight: 1
-        }}
-      >
-        <IconButton>
-          <LanguageIcon fontSize='large' sx={{ cursor: 'pointer', color: 'white' }} />
-        </IconButton>
-      </Box>
+      <Language />
     </Box>
   )
 }

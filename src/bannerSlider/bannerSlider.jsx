@@ -92,7 +92,7 @@ function bannerSlider() {
             height: '30%',
             width: '10%',
             border: '5px solid #6B240C',
-            // boxShadow: '5px 5px 5px 5px #994D1C',
+            boxShadow: '3px 3px 3px #888888',
             position: 'absolute',
             bottom: '50px',
             right: '50%',
@@ -108,7 +108,7 @@ function bannerSlider() {
             height: '30%',
             width: '10%',
             border: '5px solid #6B240C',
-            // boxShadow: '5px 5px 5px 5px #994D1C',
+            boxShadow: '3px 3px 3px #888888',
             position: 'absolute',
             bottom: '50px',
             right: 'calc(50% - 10% - 20px)',
@@ -124,7 +124,7 @@ function bannerSlider() {
             height: '30%',
             width: '10%',
             border: '5px solid #6B240C',
-            // boxShadow: '5px 5px 5px 5px #994D1C',
+            boxShadow: '3px 3px 3px #888888',
             position: 'absolute',
             bottom: '50px',
             right: 'calc(50% - 20% - 40px)',
@@ -140,7 +140,7 @@ function bannerSlider() {
             height: '30%',
             width: '10%',
             border: '5px solid #6B240C',
-            // boxShadow: '5px 5px 5px 5px #994D1C',
+            boxShadow: '3px 3px 3px #888888',
             position: 'absolute',
             bottom: '50px',
             right: 'calc(50% - 30% - 60px)',
@@ -156,7 +156,7 @@ function bannerSlider() {
             height: '30%',
             width: '10%',
             border: '5px solid #6B240C',
-            // boxShadow: '5px 5px 5px 5px #994D1C',
+            boxShadow: '3px 3px 3px #888888',
             position: 'absolute',
             bottom: '50px',
             right: 'calc(50% - 40% - 80px)',
@@ -169,7 +169,9 @@ function bannerSlider() {
             right: 'calc(50% + 10% + 20px)',
             bottom: 'calc(15% + 50px)',
             transform: 'translate(0, 50%)',
-            animation: `${cardKeyFrame} 0.3s ease-in-out 1 forwards`
+            animation: `${cardKeyFrame} 0.3s ease-in-out 1 forwards`,
+            gap: 1,
+            display: 'flex'
           }}
         >
           <ButtonBase
