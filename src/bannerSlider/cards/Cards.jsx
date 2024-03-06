@@ -4,7 +4,7 @@ import { Box } from '@mui/material'
 const cardKeyFrame = keyframes`
   from {
     opacity: 0;
-    transform: translate(0, 100%)
+    transform: translate(100%, 0)
   }
   to {
     opacity: 1;
@@ -29,7 +29,8 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: '50%',
-          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`
+          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
+          cursor: 'pointer'
         }}
       >
         hình 1
@@ -47,7 +48,8 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: 'calc(50% - 10% - 20px)',
-          animation: `${cardKeyFrame} 0.7s ease-in-out 1 forwards`
+          animation: `${cardKeyFrame} 0.7s ease-in-out 1 forwards`,
+          cursor: 'pointer'
         }}
       >
         hình 2
@@ -65,7 +67,8 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: 'calc(50% - 20% - 40px)',
-          animation: `${cardKeyFrame} 0.9s ease-in-out 1 forwards`
+          animation: `${cardKeyFrame} 0.9s ease-in-out 1 forwards`,
+          cursor: 'pointer'
         }}
       >
         hình 3
@@ -83,7 +86,8 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: 'calc(50% - 30% - 60px)',
-          animation: `${cardKeyFrame} 1.1s ease-in-out 1 forwards`
+          animation: `${cardKeyFrame} 1.1s ease-in-out 1 forwards`,
+          cursor: 'pointer'
         }}
       >
         hình 4
@@ -101,7 +105,8 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: 'calc(50% - 40% - 80px)',
-          animation: `${cardKeyFrame} 1.3s ease-in-out 1 forwards`
+          animation: `${cardKeyFrame} 1.3s ease-in-out 1 forwards`,
+          cursor: 'pointer'
         }}
       >
         hình 5

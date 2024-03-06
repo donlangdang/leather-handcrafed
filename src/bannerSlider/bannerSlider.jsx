@@ -7,14 +7,22 @@ import Cards from './cards/Cards'
 import { Box, ButtonBase } from '@mui/material'
 
 
-const cardKeyFrame = keyframes`
+const bannerKeyFrame = keyframes`
   from {
     opacity: 0;
-    transform: translate(0, 100%)
+    height: 30%;
+    width: 10%;
+    bottom: 50px;
+    right: 50%;
+    filter: blur(33px)
   }
   to {
     opacity: 1;
-    transform: translate(0, 0)
+    height: 100%;
+    width: 100%;
+    bottom: 0px;
+    right: 0%;
+    filter: blur(0)
   }
 `
 
@@ -27,8 +35,19 @@ function BannerSlider({ images }) {
   }
   const prevImage = () => {
     const prevIndex = (currentImage - 1 + images.length) % images.length
+    console.log('🚀 ~ prevImage ~ prevIndex:', prevIndex)
     setCurrentImage(prevIndex)
   }
+
+  const nextPrev = () => {
+    if (nextImage) {
+      return (currentImage - 1 + images.length) % images.length
+    }
+    else if (prevImage) {
+      return (currentImage + 2) % images.length
+    }
+  }
+  // console.log('🚀 ~ nextPrev :', nextPrev())
 
   return (
     <Box
@@ -43,14 +62,29 @@ function BannerSlider({ images }) {
     >
       <Box
         sx={{
-          backgroundImage: `linear-gradient(0, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${images[currentImage]?.url})`,
+          backgroundImage: `linear-gradient(0, rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+            url(${images[nextPrev()]?.url})`,
           width: '100%',
           height: '100%',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center'
         }}
+        key={currentImage - 1}
       >
+        <Box
+          sx={{
+            backgroundImage: `linear-gradient(0, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${images[currentImage]?.url})`,
+            width: '100%',
+            height: '100%',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            animation: `${bannerKeyFrame} 0.5s ease-in-out 1 forwards`,
+            position: 'absolute'
+          }}
+          key={currentImage + 1}
+        ></Box>
         <Title titleDescription={images[currentImage]} key={currentImage}/>
         <Cards imageUrl={images} />
         <Box
@@ -59,7 +93,6 @@ function BannerSlider({ images }) {
             right: 'calc(50% + 10% + 20px)',
             bottom: 'calc(15% + 50px)',
             transform: 'translate(0, 50%)',
-            animation: `${cardKeyFrame} 0.3s ease-in-out 1 forwards`,
             gap: 1,
             display: 'flex'
           }}
