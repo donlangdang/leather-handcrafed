@@ -1,7 +1,7 @@
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { keyframes } from '@mui/material'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Title from './title/Title'
 import Cards from './cards/Cards'
 import { Box, ButtonBase } from '@mui/material'
@@ -35,19 +35,15 @@ function BannerSlider({ images }) {
   }
   const prevImage = () => {
     const prevIndex = (currentImage - 1 + images.length) % images.length
-    console.log('🚀 ~ prevImage ~ prevIndex:', prevIndex)
+    // console.log('🚀 ~ prevImage ~ prevIndex:', prevIndex)
     setCurrentImage(prevIndex)
   }
+  const imageRef = useRef()
+  useEffect(() => {
+    let imagess = currentImage
+    imageRef.current = imagess
+  }, [currentImage])
 
-  const nextPrev = () => {
-    if (nextImage) {
-      return (currentImage - 1 + images.length) % images.length
-    }
-    else if (prevImage) {
-      return (currentImage + 2) % images.length
-    }
-  }
-  // console.log('🚀 ~ nextPrev :', nextPrev())
 
   return (
     <Box
@@ -63,7 +59,7 @@ function BannerSlider({ images }) {
       <Box
         sx={{
           backgroundImage: `linear-gradient(0, rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-            url(${images[nextPrev()]?.url})`,
+            url(${images[imageRef.current]?.url})`,
           width: '100%',
           height: '100%',
           backgroundSize: 'cover',
