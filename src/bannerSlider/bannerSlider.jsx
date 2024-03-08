@@ -9,12 +9,11 @@ import { Box, ButtonBase } from '@mui/material'
 
 const bannerKeyFrame = keyframes`
   from {
-    opacity: 0;
+    opacity: 1;
     height: 30%;
     width: 10%;
     bottom: 50px;
     right: 50%;
-    filter: blur(33px)
   }
   to {
     opacity: 1;
@@ -22,7 +21,6 @@ const bannerKeyFrame = keyframes`
     width: 100%;
     bottom: 0px;
     right: 0%;
-    filter: blur(0)
   }
 `
 
@@ -43,7 +41,8 @@ function BannerSlider({ images }) {
     let imagess = currentImage
     imageRef.current = imagess
   }, [currentImage])
-
+  // console.log('currentImage: ', currentImage)
+  // console.log(imageRef.current)
 
   return (
     <Box
@@ -82,7 +81,7 @@ function BannerSlider({ images }) {
           key={currentImage + 1}
         ></Box>
         <Title titleDescription={images[currentImage]} key={currentImage}/>
-        <Cards imageUrl={images} />
+        <Cards imageUrl={images} currentImage={currentImage}/>
         <Box
           sx={{
             position: 'absolute',

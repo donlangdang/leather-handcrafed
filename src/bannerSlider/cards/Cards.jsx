@@ -1,9 +1,10 @@
+import images from '~/apis/images'
 import { keyframes } from '@mui/material'
 import { Box } from '@mui/material'
 
 const cardKeyFrame = keyframes`
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translate(100%, 0)
   }
   to {
@@ -13,12 +14,12 @@ const cardKeyFrame = keyframes`
 `
 
 
-function Cards({ imageUrl }) {
+function Cards({ imageUrl, currentImage }) {
   return (
     <>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[0].url})`,
+          backgroundImage: `url(${imageUrl[(currentImage + 1) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -37,7 +38,7 @@ function Cards({ imageUrl }) {
       </Box>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[1].url})`,
+          backgroundImage: `url(${imageUrl[(currentImage + 2) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -48,7 +49,7 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: 'calc(50% - 10% - 20px)',
-          animation: `${cardKeyFrame} 0.7s ease-in-out 1 forwards`,
+          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
@@ -56,7 +57,7 @@ function Cards({ imageUrl }) {
       </Box>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[2].url})`,
+          backgroundImage: `url(${imageUrl[(currentImage + 3) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -67,7 +68,7 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: 'calc(50% - 20% - 40px)',
-          animation: `${cardKeyFrame} 0.9s ease-in-out 1 forwards`,
+          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
@@ -75,7 +76,7 @@ function Cards({ imageUrl }) {
       </Box>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[3].url})`,
+          backgroundImage: `url(${imageUrl[(currentImage + 4) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -86,7 +87,7 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: 'calc(50% - 30% - 60px)',
-          animation: `${cardKeyFrame} 1.1s ease-in-out 1 forwards`,
+          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
@@ -94,7 +95,7 @@ function Cards({ imageUrl }) {
       </Box>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[4].url})`,
+          backgroundImage: `url(${imageUrl[(currentImage + 5) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -105,7 +106,7 @@ function Cards({ imageUrl }) {
           position: 'absolute',
           bottom: '50px',
           right: 'calc(50% - 40% - 80px)',
-          animation: `${cardKeyFrame} 1.3s ease-in-out 1 forwards`,
+          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
