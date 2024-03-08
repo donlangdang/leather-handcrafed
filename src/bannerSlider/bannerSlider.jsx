@@ -12,7 +12,7 @@ const bannerKeyFrame = keyframes`
     opacity: 1;
     height: 30%;
     width: 10%;
-    bottom: 50px;
+    bottom: 5%;
     right: 50%;
   }
   to {

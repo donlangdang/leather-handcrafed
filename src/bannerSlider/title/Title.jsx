@@ -33,14 +33,14 @@ function Title({ titleDescription }) {
     }}
   >
     <Typography
-      sx={{ animation: `${contentKeyFrame} 2s ease-in-out 1 forwards` }}
+      sx={{ animation: `${contentKeyFrame} 1.3s ease-in-out 1 forwards` }}
       variant="h4" align='center'
       gutterBottom
     >
       {titleDescription?.title}
     </Typography>
     <Typography
-      sx={{ animation: `${contentKeyFrame} 2.3s ease-in-out 1 forwards` }}
+      sx={{ animation: `${contentKeyFrame} 1.5s ease-in-out 1 forwards` }}
       variant='h7' align='center'
       gutterBottom
     >
@@ -48,7 +48,7 @@ function Title({ titleDescription }) {
     </Typography>
     <MyButton
       sx={{
-        animation: `${contentKeyFrame} 2.6s ease-in-out 1 forwards`,
+        animation: `${contentKeyFrame} 1.7s ease-in-out 1 forwards`,
         padding: '8px 5px',
         bgcolor: '#994D1C',
         margin: 0,
