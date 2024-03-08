@@ -35,7 +35,6 @@ function BannerSlider({ images }) {
   }
   const prevImage = () => {
     const prevIndex = (currentImage - 1 + images.length) % images.length
-    // console.log('🚀 ~ prevImage ~ prevIndex:', prevIndex)
     setCurrentImage(prevIndex)
   }
   const imageRef = useRef()
