@@ -105,7 +105,7 @@ function BannerSlider({ images }) {
             }}
             onClick={prevImage}
           >
-            <ChevronLeftIcon fontSize='medium'/>
+            <ChevronLeftIcon fontSize='large'/>
           </ButtonBase>
           <ButtonBase
             sx={{
