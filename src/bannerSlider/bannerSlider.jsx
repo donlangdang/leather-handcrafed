@@ -1,4 +1,4 @@
-// import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { keyframes } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
@@ -31,10 +31,10 @@ function BannerSlider({ images }) {
     const nextIndex = (currentImage + 1) % images.length
     setCurrentImage(nextIndex)
   }
-  // const prevImage = () => {
-  //   const prevIndex = (currentImage - 1 + images.length) % images.length
-  //   setCurrentImage(prevIndex)
-  // }
+  const prevImage = () => {
+    const prevIndex = (currentImage - 1 + images.length) % images.length
+    setCurrentImage(prevIndex)
+  }
 
   // React thực hiện render component theo từng bước.
   // Bước 1: Render component và khởi tạo state.
@@ -96,7 +96,7 @@ function BannerSlider({ images }) {
             display: 'flex'
           }}
         >
-          {/* <ButtonBase
+          <ButtonBase
             sx={{
               bgcolor: '#994D1C',
               borderRadius: '50%',
@@ -106,7 +106,7 @@ function BannerSlider({ images }) {
             onClick={prevImage}
           >
             <ChevronLeftIcon fontSize='medium'/>
-          </ButtonBase> */}
+          </ButtonBase>
           <ButtonBase
             sx={{
               bgcolor: '#994D1C',
