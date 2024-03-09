@@ -1,4 +1,4 @@
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+// import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { keyframes } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
@@ -31,17 +31,22 @@ function BannerSlider({ images }) {
     const nextIndex = (currentImage + 1) % images.length
     setCurrentImage(nextIndex)
   }
-  const prevImage = () => {
-    const prevIndex = (currentImage - 1 + images.length) % images.length
-    setCurrentImage(prevIndex)
-  }
+  // const prevImage = () => {
+  //   const prevIndex = (currentImage - 1 + images.length) % images.length
+  //   setCurrentImage(prevIndex)
+  // }
+
+  // React thực hiện render component theo từng bước.
+  // Bước 1: Render component và khởi tạo state.
+  //   đầu tiên khi render component thì imageRef.current là undefined vì chưa được gọi callback useEffect
+  // Bước 2: Khởi tạo các hook, bao gồm cả useEffect.
+  //   render xong thì tạo các hook thì callback useEffect được thực thi sau khi dependences so với imageRef.current giá trị là undefined
+  // Bước 3: Chạy các callback function của các hook.
+
   const imageRef = useRef()
   useEffect(() => {
-    let imagess = currentImage
-    imageRef.current = imagess
+    imageRef.current = currentImage
   }, [currentImage])
-  // console.log('currentImage: ', currentImage)
-  // console.log(imageRef.current)
 
   return (
     <Box
@@ -91,7 +96,7 @@ function BannerSlider({ images }) {
             display: 'flex'
           }}
         >
-          <ButtonBase
+          {/* <ButtonBase
             sx={{
               bgcolor: '#994D1C',
               borderRadius: '50%',
@@ -101,7 +106,7 @@ function BannerSlider({ images }) {
             onClick={prevImage}
           >
             <ChevronLeftIcon fontSize='medium'/>
-          </ButtonBase>
+          </ButtonBase> */}
           <ButtonBase
             sx={{
               bgcolor: '#994D1C',
@@ -111,7 +116,7 @@ function BannerSlider({ images }) {
             }}
             onClick={nextImage}
           >
-            <ChevronRightIcon fontSize='medium'/>
+            <ChevronRightIcon fontSize='large'/>
           </ButtonBase>
         </Box>
       </Box>
