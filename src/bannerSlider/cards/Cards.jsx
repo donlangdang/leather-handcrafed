@@ -1,8 +1,7 @@
-import images from '~/apis/images'
 import { keyframes } from '@mui/material'
 import { Box } from '@mui/material'
 
-const cardKeyFrame = keyframes`
+const nextCardKeyFrame = keyframes`
   from {
     opacity: 1;
     transform: translate(100%, 0)
@@ -14,12 +13,13 @@ const cardKeyFrame = keyframes`
 `
 
 
-function Cards({ imageUrl, currentImage }) {
+function Cards({ images, currentImage }) {
+
   return (
     <>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[(currentImage + 1) % images.length].url})`,
+          backgroundImage: `url(${images[(currentImage + 1) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -29,7 +29,7 @@ function Cards({ imageUrl, currentImage }) {
           position: 'absolute',
           bottom: '5%',
           right: '50%',
-          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
+          animation: `${nextCardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
@@ -37,7 +37,7 @@ function Cards({ imageUrl, currentImage }) {
       </Box>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[(currentImage + 2) % images.length].url})`,
+          backgroundImage: `url(${images[(currentImage + 2) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -47,7 +47,7 @@ function Cards({ imageUrl, currentImage }) {
           position: 'absolute',
           bottom: '5%',
           right: 'calc(50% - 10% - 20px)',
-          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
+          animation: `${nextCardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
@@ -55,7 +55,7 @@ function Cards({ imageUrl, currentImage }) {
       </Box>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[(currentImage + 3) % images.length].url})`,
+          backgroundImage: `url(${images[(currentImage + 3) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -65,7 +65,7 @@ function Cards({ imageUrl, currentImage }) {
           position: 'absolute',
           bottom: '5%',
           right: 'calc(50% - 20% - 40px)',
-          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
+          animation: `${nextCardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
@@ -73,7 +73,7 @@ function Cards({ imageUrl, currentImage }) {
       </Box>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[(currentImage + 4) % images.length].url})`,
+          backgroundImage: `url(${images[(currentImage + 4) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -83,7 +83,7 @@ function Cards({ imageUrl, currentImage }) {
           position: 'absolute',
           bottom: '5%',
           right: 'calc(50% - 30% - 60px)',
-          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
+          animation: `${nextCardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
@@ -91,7 +91,7 @@ function Cards({ imageUrl, currentImage }) {
       </Box>
       <Box
         sx={{
-          backgroundImage: `url(${imageUrl[(currentImage + 5) % images.length].url})`,
+          backgroundImage: `url(${images[(currentImage + 5) % images.length].url})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -101,11 +101,40 @@ function Cards({ imageUrl, currentImage }) {
           position: 'absolute',
           bottom: '5%',
           right: 'calc(50% - 40% - 80px)',
-          animation: `${cardKeyFrame} 0.5s ease-in-out 1 forwards`,
+          animation: `${nextCardKeyFrame} 0.5s ease-in-out 1 forwards`,
           cursor: 'pointer'
         }}
       >
         hình 5
+      </Box>
+      <Box
+        sx={{
+          width: '60%',
+          height: '30%',
+          position: 'absolute',
+          bgcolor: '#333',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 1
+        }}
+      >
+        {images.map((image) => (
+          <Box
+            sx={{
+              width: '20%',
+              height: '100%',
+              bgcolor: '#333',
+              flex: '1',
+              backgroundImage: `url(${image.url})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              animation: `${nextCardKeyFrame} 0.5s ease-in-out 1 forwards`
+            }}
+            key={image.url}
+          ></Box>
+        ))}
       </Box>
     </>
   )

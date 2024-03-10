@@ -85,7 +85,7 @@ function BannerSlider({ images }) {
           key={currentImage + 1}
         ></Box>
         <Title titleDescription={images[currentImage]} key={currentImage}/>
-        <Cards imageUrl={images} currentImage={currentImage}/>
+        <Cards images={images} currentImage={currentImage}/>
         <Box
           sx={{
             position: 'absolute',

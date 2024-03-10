@@ -1,6 +1,7 @@
 import NavBar from '~/navBar/navBar'
 import BannerSlider from '~/bannerSlider/bannerSlider'
 import images from '~/apis/images'
+import Content from './content/Content'
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <>
       <NavBar />
       <BannerSlider images={images}/>
-      Làm các thẻ và thông tin
+      <Content />
     </>
   )
 }
