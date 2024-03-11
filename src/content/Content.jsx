@@ -18,7 +18,7 @@ function Content() {
         <Box
           sx={{
             width: '20%',
-            height: '20%',
+            height: '40%',
             bgcolor: '#333',
             flex: '1',
             backgroundImage: `url(${image.url})`,

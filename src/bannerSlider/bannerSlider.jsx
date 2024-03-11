@@ -1,37 +1,26 @@
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import { keyframes } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 import Title from './title/Title'
 import Cards from './cards/Cards'
+import { animation } from '~/animation/Animation'
 import { Box, ButtonBase } from '@mui/material'
 
-
-const bannerKeyFrame = keyframes`
-  from {
-    opacity: 1;
-    height: 30%;
-    width: 10%;
-    bottom: 5%;
-    right: 50%;
-  }
-  to {
-    opacity: 1;
-    height: 100%;
-    width: 100%;
-    bottom: 0px;
-    right: 0%;
-  }
-`
 
 function BannerSlider({ images }) {
 
   const [currentImage, setCurrentImage] = useState(0)
+  const [currentAnimation, setCurrentAnimation] = useState()
+  const [currentCard, setCurrentCard] = useState(animation.nextCardKeyFrame)
   const nextImage = () => {
+    setCurrentCard(animation.nextCardKeyFrame)
+    setCurrentAnimation(animation.nextBannerKeyFrame)
     const nextIndex = (currentImage + 1) % images.length
     setCurrentImage(nextIndex)
   }
   const prevImage = () => {
+    setCurrentCard(animation.prevCardKeyFrame)
+    setCurrentAnimation(animation.prevBannerKeyFrame)
     const prevIndex = (currentImage - 1 + images.length) % images.length
     setCurrentImage(prevIndex)
   }
@@ -79,13 +68,13 @@ function BannerSlider({ images }) {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            animation: `${bannerKeyFrame} 0.5s ease-in-out 1 forwards`,
+            animation: `${currentAnimation} 0.5s ease-in-out 1 forwards`,
             position: 'absolute'
           }}
           key={currentImage + 1}
         ></Box>
         <Title titleDescription={images[currentImage]} key={currentImage}/>
-        <Cards images={images} currentImage={currentImage}/>
+        <Cards images={images} currentImage={currentImage} currentCard={currentCard}/>
         <Box
           sx={{
             position: 'absolute',
