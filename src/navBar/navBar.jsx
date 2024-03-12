@@ -1,6 +1,6 @@
 import Logo from './logo/logo'
 import CenterNavbar from './centerNavbar/centerNavbar'
-import { keyframes } from '@mui/material'
+import { keyframes, useScrollTrigger } from '@mui/material'
 import { Box } from '@mui/material'
 import Language from './language/language'
 
@@ -16,8 +16,23 @@ const navBarKeyFrame = keyframes`
     filter: blur(0)
   }
 `
+const navBarScrollKeyFrame = keyframes`
+  from {
+    opacity: 0;
+    filter: blur(10px)
+  }
+  to {
+    opacity: 1;
+    filter: blur(0)
+  }
+`
 
 function NavBar() {
+
+  const trigger = useScrollTrigger({
+    target: window,
+    disableHysteresis: true
+  })
 
   return (
     <Box
@@ -29,9 +44,10 @@ function NavBar() {
         justifyContent: 'space-betweem',
         position: 'fixed',
         zIndex: '1000',
-        color: 'white',
         opacity: 0,
-        animation: `${navBarKeyFrame} 1.5s ease-in-out 1 forwards`
+        animation: trigger ? `${navBarScrollKeyFrame} 0.5s ease-in-out 1 forwards` : `${navBarKeyFrame} 0.5s ease-in-out 1 forwards`,
+        bgcolor: trigger ? 'white' : 'rgba(0, 0, 0, 0)',
+        color: trigger ? 'black' : 'white'
       }}>
       <Logo />
       <CenterNavbar />

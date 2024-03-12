@@ -7,7 +7,6 @@ function Content() {
       sx={{
         width: '100%',
         height: '500px',
-        bgcolor: 'blue',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',

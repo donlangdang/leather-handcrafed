@@ -49,16 +49,23 @@ function Title({ titleDescription }) {
     <MyButton
       sx={{
         animation: `${contentKeyFrame} 1.7s ease-in-out 1 forwards`,
-        padding: '8px 5px',
-        bgcolor: '#994D1C',
-        margin: 0,
-        border: '1px solid #6B240C',
+        padding: '1rem 1.5rem',
+        fontSize: '0.75rem',
+        bgcolor: 'white',
+        fontWeight: '700',
+        color: 'black',
+        width: 'auto',
+        textTransform: 'uppercase',
+        boxSizing: 'content-box',
+        border: '1px solid white',
+        borderRadius: '3%',
+        // border: '1px solid black',
         '&::after': {
           bottom: '10px',
           width: '90%'
         }
       }}>
-    TÌM HIỂU THÊM
+      tìm hiểu thêm
     </MyButton>
   </Box>
   )

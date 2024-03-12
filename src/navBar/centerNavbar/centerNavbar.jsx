@@ -2,10 +2,17 @@ import React from 'react'
 import MyButton from '~/navBar/myButtom'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { Box } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import { useScrollTrigger } from '@mui/material/'
+import { Box } from '@mui/material'
 
 function CenterNavbar() {
+
+  const trigger = useScrollTrigger({
+    target: window,
+    disableHysteresis: true
+  })
+
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -23,8 +30,19 @@ function CenterNavbar() {
       justifyContent: 'center'
     }}
     >
-      <MyButton>Trang Chủ</MyButton>
       <MyButton
+        sx={{
+          '&::after': {
+            background: trigger ? 'black' : 'white'
+          }
+        }}
+      >Trang Chủ</MyButton>
+      <MyButton
+        sx={{
+          '&::after': {
+            background: trigger ? 'black' : 'white'
+          }
+        }}
         // id="basic-menu-items"
         // aria-controls={open ? 'my-button-items' : undefined}
         // aria-haspopup="true"
@@ -84,8 +102,24 @@ function CenterNavbar() {
           <MyButton>Đồ Decor</MyButton>
         </MenuItem>
       </Menu>
-      <MyButton>Giới Thiệu</MyButton>
-      <MyButton>Liên Hệ</MyButton>
+      <MyButton
+        sx={{
+          '&::after': {
+            background: trigger ? 'black' : 'white'
+          }
+        }}
+      >
+        Giới Thiệu
+      </MyButton>
+      <MyButton
+        sx={{
+          '&::after': {
+            background: trigger ? 'black' : 'white'
+          }
+        }}
+      >
+        Liên Hệ
+      </MyButton>
     </Box>
   )
 }
