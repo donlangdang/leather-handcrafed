@@ -22,7 +22,7 @@ function Cards({ images, currentImage, currentCard }) {
           cursor: 'pointer'
         }}
       >
-        hình 1
+
       </Box>
       <Box
         sx={{
@@ -41,7 +41,7 @@ function Cards({ images, currentImage, currentCard }) {
           cursor: 'pointer'
         }}
       >
-        hình 2
+
       </Box>
       <Box
         sx={{
@@ -60,7 +60,7 @@ function Cards({ images, currentImage, currentCard }) {
           cursor: 'pointer'
         }}
       >
-        hình 3
+
       </Box>
       <Box
         sx={{
@@ -79,7 +79,7 @@ function Cards({ images, currentImage, currentCard }) {
           cursor: 'pointer'
         }}
       >
-        hình 4
+
       </Box>
       <Box
         sx={{
@@ -98,7 +98,7 @@ function Cards({ images, currentImage, currentCard }) {
           cursor: 'pointer'
         }}
       >
-        hình 5
+
       </Box>
     </>
   )
