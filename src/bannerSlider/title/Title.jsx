@@ -61,8 +61,8 @@ function Title({ titleDescription }) {
         borderRadius: '3%',
         // border: '1px solid black',
         '&::after': {
-          bottom: '10px',
-          width: '90%'
+          bottom: '30%',
+          width: '70%'
         }
       }}>
       tìm hiểu thêm
