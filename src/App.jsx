@@ -1,7 +1,6 @@
 import NavBar from '~/navBar/navBar'
-import BannerSlider from '~/bannerSlider/bannerSlider'
 import images from '~/apis/images'
-import Content from './content/Content'
+import Home from './home/Home'
 
 
 function App() {
@@ -9,8 +8,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <BannerSlider images={images}/>
-      <Content />
+      <Home images={images} />
     </>
   )
 }
