@@ -1,4 +1,5 @@
 import DoubleImagePage from './doubleImagePage/DoubleImagePage'
+import BannerCenter from './bannerCenter/BannerCenter'
 
 
 const imageUrl = [
@@ -36,6 +37,7 @@ function Content() {
     <>
       <DoubleImagePage imageUrl={imageUrl}/>
       <DoubleImagePage imageUrl={lineTwo}/>
+      <BannerCenter />
     </>
   )
 }

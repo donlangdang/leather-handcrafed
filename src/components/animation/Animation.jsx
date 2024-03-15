@@ -56,11 +56,48 @@ const prevCardKeyFrame = keyframes`
   }
 `
 
+const titleKeyFrame = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(0, 100%);
+    filter: blur(20px)
+  }
+  to {
+    opacity: 1;
+    transform: translate(0,0);
+    filter: blur(0)
+  }
+`
+const navBarKeyFrame = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(0, -9vh);
+    filter: blur(33px)
+  }
+  to {
+    opacity: 1;
+    transform: translate(0,0);
+    filter: blur(0)
+  }
+`
+const navBarScrollKeyFrame = keyframes`
+  from {
+    opacity: 0;
+    filter: blur(10px)
+  }
+  to {
+    opacity: 1;
+    filter: blur(0)
+  }
+`
 
 export const animation = {
   nextBannerKeyFrame,
   prevBannerKeyFrame,
   nextCardKeyFrame,
-  prevCardKeyFrame
+  prevCardKeyFrame,
+  titleKeyFrame,
+  navBarKeyFrame,
+  navBarScrollKeyFrame
 }
 

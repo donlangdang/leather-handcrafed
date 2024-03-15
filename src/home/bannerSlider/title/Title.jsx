@@ -1,20 +1,7 @@
 import MyButton from '~/navBar/myButtom'
-import { keyframes } from '@mui/material'
+import { animation } from '~/components/animation/Animation'
 import { Box, Typography } from '@mui/material'
 
-
-const contentKeyFrame = keyframes`
-  from {
-    opacity: 0;
-    transform: translate(0, 100%);
-    filter: blur(20px)
-  }
-  to {
-    opacity: 1;
-    transform: translate(0,0);
-    filter: blur(0)
-  }
-`
 
 function Title({ titleDescription }) {
   return (<Box
@@ -33,14 +20,14 @@ function Title({ titleDescription }) {
     }}
   >
     <Typography
-      sx={{ animation: `${contentKeyFrame} 1.3s ease-in-out 1 forwards` }}
+      sx={{ animation: `${animation.titleKeyFrame} 1.3s ease-in-out 1 forwards` }}
       variant="h4" align='center'
       gutterBottom
     >
       {titleDescription?.title}
     </Typography>
     <Typography
-      sx={{ animation: `${contentKeyFrame} 1.5s ease-in-out 1 forwards` }}
+      sx={{ animation: `${animation.titleKeyFrame} 1.5s ease-in-out 1 forwards` }}
       variant='h7' align='center'
       gutterBottom
     >
@@ -48,7 +35,7 @@ function Title({ titleDescription }) {
     </Typography>
     <MyButton
       sx={{
-        animation: `${contentKeyFrame} 1.7s ease-in-out 1 forwards`,
+        animation: `${animation.titleKeyFrame} 1.7s ease-in-out 1 forwards`,
         padding: '1rem 1.5rem',
         fontSize: '0.75rem',
         bgcolor: 'white',

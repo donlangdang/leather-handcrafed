@@ -1,7 +1,8 @@
-import Typography from '@mui/material/Typography'
 import MyButton from '~/navBar/myButtom'
-import { Box, keyframes } from '@mui/material'
-
+import { animation } from '~/components/animation/Animation'
+import Typography from '@mui/material/Typography'
+import { Box, keyframes, useScrollTrigger } from '@mui/material'
+import { useRef } from 'react'
 
 const imageKeyFrame = keyframes`
   to {
@@ -9,6 +10,15 @@ const imageKeyFrame = keyframes`
   }
 `
 function ImagePage({ imageUrl }) {
+  const targetComponent = useRef()
+  const trigger = useScrollTrigger({
+    target: targetComponent.current,
+    // targetPosition: 'bottom',
+    // threshold: 0
+  })
+  console.log(trigger)
+
+
   return (
     <Box
       sx={{
@@ -40,10 +50,12 @@ function ImagePage({ imageUrl }) {
             flexDirection: 'column',
             textTransform: 'uppercase'
           }}
+          ref={targetComponent.current}
         >
           <Typography
             sx={{
-              color: 'white'
+              color: 'white',
+              animation: trigger ? `${animation.titleKeyFrame} 1.5s ease-in-out 1 forwards` : 'none'
             }}
             variant="h4" align='center'
             gutterBottom
@@ -62,7 +74,8 @@ function ImagePage({ imageUrl }) {
               '&::after': {
                 bottom: '30%',
                 width: '70%'
-              }
+              },
+              animation: trigger ? `${animation.titleKeyFrame} 1.2s ease-in-out 1 forwards` : 'none'
             }}
           >
             KHÁM PHÁ SẢN PHẨM
