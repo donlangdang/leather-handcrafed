@@ -16,7 +16,7 @@ function DoubleImagePage({ imageUrl }) {
       }}
     >
       {imageUrl.map((image) => (
-        <ImagePage imageUrl={image} key={image}/>
+        <ImagePage imageUrl={image} key={image.title}/>
       ))}
     </Box>
   )
