@@ -1,4 +1,6 @@
 import Box from '@mui/material/Box'
+import Featured from './featured/Featured'
+import Servires from './services/Servires'
 
 function BannerCenter() {
   return (
@@ -27,6 +29,21 @@ function BannerCenter() {
       >
         Goda Decor & Leather Handcrafted
       </Box>
+      <Box
+        sx={{
+          textTransform: 'uppercase',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontWeight: '700',
+          marginTop: '7rem',
+          fontSize: '1.5rem'
+        }}
+      >
+        đặc biệt
+      </Box>
+      <Featured />
+      <Servires />
     </Box>
   )
 }
