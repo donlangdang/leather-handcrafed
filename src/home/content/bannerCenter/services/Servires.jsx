@@ -27,7 +27,6 @@ function Servires() {
         justifyContent: 'center',
         gap: '2rem',
         padding: '0 15rem 0 15rem',
-        bgcolor: 'rgb(236, 236, 236)',
         marginBottom: '3rem'
       }}
     >
