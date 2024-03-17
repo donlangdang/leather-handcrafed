@@ -44,6 +44,19 @@ function BannerCenter() {
         đặc biệt
       </Box>
       <Featured />
+      <Box
+        sx={{
+          textTransform: 'uppercase',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontWeight: '500',
+          marginBottom: '2rem',
+          fontSize: '2rem'
+        }}
+      >
+        dịch vụ goda
+      </Box>
       <Servires />
     </Box>
   )
