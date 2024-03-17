@@ -9,7 +9,6 @@ function Featured() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '1rem',
         padding: '0 15rem 0 15rem',
         margin: '5rem 0 5rem 0',
         position: 'relative',
