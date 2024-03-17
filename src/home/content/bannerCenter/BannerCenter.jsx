@@ -24,7 +24,8 @@ function BannerCenter() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '3rem'
+          fontSize: '5rem',
+          fontWeight: '500'
         }}
       >
         Goda Decor & Leather Handcrafted
@@ -35,9 +36,9 @@ function BannerCenter() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontWeight: '700',
+          fontWeight: '500',
           marginTop: '7rem',
-          fontSize: '1.5rem'
+          fontSize: '2rem'
         }}
       >
         đặc biệt
