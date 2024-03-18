@@ -24,8 +24,9 @@ function BannerCenter() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '5rem',
-          fontWeight: '500'
+          fontSize: '4rem',
+          fontWeight: '500',
+          textTransform: 'uppercase'
         }}
       >
         Goda Decor & Leather Handcrafted
