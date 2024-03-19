@@ -1,6 +1,7 @@
-import NavBar from '~/navBar/navBar'
 import images from '~/apis/images'
 import Home from './home/Home'
+import NavBar from '~/components/navBar/navBar'
+import Footer from '~/components/footer/Footer'
 
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
   return (
     <>
       <NavBar />
-      <Home images={images} />
+      {/* <Home images={images} />
+      <Footer /> */}
     </>
   )
 }

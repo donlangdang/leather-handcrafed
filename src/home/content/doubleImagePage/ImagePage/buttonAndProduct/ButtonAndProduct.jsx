@@ -1,4 +1,4 @@
-import MyButton from '~/navBar/myButtom'
+import MyButton from '~/components/navBar/myButtom'
 import { animation } from '~/components/animation/Animation'
 import { Box, useScrollTrigger } from '@mui/material'
 import Product from './product/Product'

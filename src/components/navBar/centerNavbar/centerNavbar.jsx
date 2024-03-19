@@ -1,5 +1,5 @@
 import React from 'react'
-import MyButton from '~/navBar/myButtom'
+import MyButton from '~/components/navBar/myButtom'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
@@ -25,7 +25,7 @@ function CenterNavbar() {
   return (
     <Box sx={{
       flex: 3,
-      display: 'flex',
+      display: { xs: 'none', md: 'flex', lg: 'flex' },
       alignItems: 'center',
       justifyContent: 'center'
     }}

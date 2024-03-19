@@ -1,4 +1,4 @@
-import MyButton from '~/navBar/myButtom'
+import MyButton from '~/components/navBar/myButtom'
 import { animation } from '~/components/animation/Animation'
 import { Box, Typography } from '@mui/material'
 
