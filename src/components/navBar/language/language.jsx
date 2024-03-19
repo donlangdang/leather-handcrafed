@@ -3,6 +3,7 @@ import { useMediaQuery, useScrollTrigger } from '@mui/material/'
 import LanguageIcon from '@mui/icons-material/Language'
 // import theme from '~/theme'
 import Box from '@mui/material/Box'
+import ResponsiveMenu from './responsiveLayout/ResponsiveMenu'
 
 function Language() {
 
@@ -11,7 +12,6 @@ function Language() {
     disableHysteresis: true
   })
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
-  console.log('🚀 ~ Language ~ mobile:', mobile)
 
   return (
     <Box
@@ -24,7 +24,7 @@ function Language() {
       }}
     >
       {mobile ?
-        <Box sx={{ bgcolor: 'blue', height: '100%', width: '100%' }}>as</Box> :
+        <ResponsiveMenu /> :
         <IconButton>
           <LanguageIcon fontSize='large' sx={{ cursor: 'pointer', color: trigger ? 'black' : 'white' }} />
         </IconButton>

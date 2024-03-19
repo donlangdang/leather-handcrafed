@@ -2,7 +2,7 @@ import Logo from './logo/logo'
 import CenterNavbar from './centerNavbar/centerNavbar'
 import Language from './language/language'
 import { animation } from '~/components/animation/Animation'
-import { useScrollTrigger } from '@mui/material'
+import { useScrollTrigger, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/material'
 
 
@@ -12,6 +12,8 @@ function NavBar() {
     target: window,
     disableHysteresis: true
   })
+
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
   return (
     <Box
@@ -31,7 +33,7 @@ function NavBar() {
         color: 'white'
       }}>
       <Logo />
-      <CenterNavbar />
+      {mobile ? <></> : <CenterNavbar /> }
       <Language />
     </Box>
   )
