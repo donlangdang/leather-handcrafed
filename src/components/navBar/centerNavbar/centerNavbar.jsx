@@ -22,10 +22,11 @@ function CenterNavbar() {
   const handleClose = () => {
     setAnchorEl(null)
   }
+
   return (
     <Box sx={{
       flex: 3,
-      display: { xs: 'none', md: 'flex', lg: 'flex' },
+      display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
     }}
