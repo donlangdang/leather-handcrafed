@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import MyButton from '~/navBar/myButtom'
+import MyButton from '~/components/navBar/myButtom'
 
 function Featured() {
   return (

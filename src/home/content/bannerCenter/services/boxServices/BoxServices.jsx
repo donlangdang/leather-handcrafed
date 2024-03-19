@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
 import images from '~/apis/images'
-import MyButton from '~/navBar/myButtom'
+import MyButton from '~/components/navBar/myButtom'
 import { Typography } from '@mui/material'
 
 
