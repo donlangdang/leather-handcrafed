@@ -3,32 +3,34 @@ import { animation } from '~/components/animation/Animation'
 import { Box, Typography } from '@mui/material'
 
 
-function Title({ titleDescription }) {
+function Title({ titleDescription, mobile }) {
   return (<Box
     sx={{
       position: 'absolute',
-      top: '15%',
-      left: '5%',
+      top: mobile ? '50%' : '15%',
+      left: mobile ? '50%' : '5%',
+      ...(mobile && { transform: 'translate(-50%, -50%)' }),
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       justifyItems: 'center',
       flexDirection: 'column',
-      width: '40%',
-      height: '50%',
-      color: 'white'
+      width: mobile ? '90%' : '40%',
+      height: mobile ? '90%' : '50%',
+      color: 'white',
+      gap: 1
     }}
   >
     <Typography
       sx={{ animation: `${animation.titleKeyFrame} 1.3s ease-in-out 1 forwards` }}
-      variant="h4" align='center'
+      variant="h5" align='center'
       gutterBottom
     >
       {titleDescription?.title}
     </Typography>
     <Typography
       sx={{ animation: `${animation.titleKeyFrame} 1.5s ease-in-out 1 forwards` }}
-      variant='h7' align='center'
+      variant='subtitle1' align='center'
       gutterBottom
     >
       {titleDescription?.description}

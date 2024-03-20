@@ -4,7 +4,7 @@ import MyButton from '~/components/navBar/myButtom'
 import { Typography } from '@mui/material'
 
 
-function BoxServices({ service }) {
+function BoxServices({ service, mobile }) {
   return (
     <Box
       sx={{
@@ -13,7 +13,8 @@ function BoxServices({ service }) {
         justifyContent: 'center',
         flexDirection: 'column',
         flex: 1,
-        height: '100%'
+        height: '100%',
+        ...(mobile && { minWidth: '90%' })
       }}
     >
       <Box

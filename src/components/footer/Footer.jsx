@@ -5,12 +5,16 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
 import EmailIcon from '@mui/icons-material/Email'
 import { Link, Typography } from '@mui/material'
+import { useMediaQuery } from '@mui/material'
 
 function Footer() {
+
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+
   return (
     <Box
       sx={{
-        height: '40vh',
+        height: 'auto',
         width: '100%',
         bgcolor: 'black'
       }}
@@ -19,12 +23,13 @@ function Footer() {
         sx={{
           width: '100%',
           height: '100%',
-          padding: '2rem 15rem 2rem 15rem',
+          padding: mobile ? '2rem 2rem 2rem 2rem' : '2rem 15rem 2rem 15rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          ...(mobile && { flexDirection: 'column' }),
           color: 'white',
-          gap: 2
+          gap: 3
         }}
       >
         <Box
@@ -35,60 +40,8 @@ function Footer() {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            gap: 2
-          }}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1
-            }}
-          >
-            <SvgIcon component={leatherIcon} fontSize='small' inheritViewBox />
-            <Box>GoDa Decor & leather Handcrafted</Box>
-          </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1
-            }}
-          >
-            <LocationOnIcon />
-            <Box>Số nhà: 59 đường Tây sơn, phường Tân Tiến, thành phố Buôn Ma thuột, tỉnh Đăk lăk</Box>
-          </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1
-            }}
-          >
-            <LocalPhoneIcon />
-            <Box>Số Điện Thoại: 0845414579, 0940100191</Box>
-          </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1
-            }}
-          >
-            <EmailIcon />
-            <Box>Email: dodadecor@gmail.com, tranhuutu@gmail.com</Box>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            height: '100%',
-            width: '100%',
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
             gap: 1,
-            alignItems: 'center'
+            alignItems: 'flex-start'
             // bgcolor: 'red'
           }}
         >
@@ -165,7 +118,7 @@ function Footer() {
             flexDirection: 'column',
             justifyContent: 'center',
             gap: 1,
-            alignItems: 'center'
+            alignItems: 'flex-start'
           }}
         >
           <Typography variant="h5" align='left' gutterBottom>
@@ -216,6 +169,58 @@ function Footer() {
           >
             Phản hồi từ khách hàng
           </Link>
+        </Box>
+        <Box
+          sx={{
+            height: '100%',
+            width: '100%',
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: 2
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1
+            }}
+          >
+            <SvgIcon component={leatherIcon} fontSize='small' inheritViewBox />
+            <Box>GoDa Decor & leather Handcrafted</Box>
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1
+            }}
+          >
+            <LocationOnIcon />
+            <Box>Số nhà: 59 đường Tây sơn, phường Tân Tiến, thành phố Buôn Ma thuột, tỉnh Đăk lăk</Box>
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1
+            }}
+          >
+            <LocalPhoneIcon />
+            <Box>Số Điện Thoại: 0845414579, 0940100191</Box>
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1
+            }}
+          >
+            <EmailIcon />
+            <Box>Email: dodadecor@gmail.com, tranhuutu@gmail.com</Box>
+          </Box>
         </Box>
       </Box>
     </Box>

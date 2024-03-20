@@ -1,8 +1,12 @@
 import ImagePage from './ImagePage/ImagePage'
-import { Box } from '@mui/material'
+import Box from '@mui/material/Box'
+import { useMediaQuery } from '@mui/material'
 
 
 function DoubleImagePage({ imageUrl }) {
+
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+
   return (
     <Box
       sx={{
@@ -12,11 +16,12 @@ function DoubleImagePage({ imageUrl }) {
         justifyContent: 'center',
         gap: '1rem',
         padding: '1rem',
-        position: 'relative'
+        position: 'relative',
+        ...(mobile && { flexDirection: 'column' })
       }}
     >
       {imageUrl.map((image) => (
-        <ImagePage imageUrl={image} key={image.title}/>
+        <ImagePage imageUrl={image} mobile={mobile} key={image.title}/>
       ))}
     </Box>
   )

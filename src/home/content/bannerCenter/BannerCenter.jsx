@@ -1,13 +1,16 @@
 import Box from '@mui/material/Box'
 import Featured from './featured/Featured'
 import Servires from './services/Servires'
+import { Typography, useMediaQuery } from '@mui/material'
 
 function BannerCenter() {
+
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+
   return (
     <Box
       sx={{
         width: '100%',
-        aspectRatio: '16/4',
         padding: '1rem'
       }}
     >
@@ -24,12 +27,20 @@ function BannerCenter() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '4rem',
-          fontWeight: '500',
-          textTransform: 'uppercase'
+          textTransform: 'uppercase',
+          overflow: 'hidden',
+          aspectRatio: '16/4'
         }}
       >
-        Goda Decor & Leather Handcrafted
+        <Typography
+          sx={{
+            fontWeight: '500',
+            textAlign: 'center'
+          }}
+          variant={mobile ? 'h5' : 'h1'}
+        >
+          Goda Decor & Leather Handcrafted
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -38,13 +49,13 @@ function BannerCenter() {
           alignItems: 'center',
           justifyContent: 'center',
           fontWeight: '500',
-          marginTop: '7rem',
+          marginTop: '4rem',
           fontSize: '2rem'
         }}
       >
         đặc biệt
       </Box>
-      <Featured />
+      <Featured mobile={mobile} />
       <Box
         sx={{
           textTransform: 'uppercase',
@@ -52,13 +63,13 @@ function BannerCenter() {
           alignItems: 'center',
           justifyContent: 'center',
           fontWeight: '500',
-          marginBottom: '2rem',
+          marginBottom: '4rem',
           fontSize: '2rem'
         }}
       >
         dịch vụ goda
       </Box>
-      <Servires />
+      <Servires mobile={mobile} />
     </Box>
   )
 }
