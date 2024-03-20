@@ -4,7 +4,7 @@ import { Box, useScrollTrigger } from '@mui/material'
 import Product from './product/Product'
 
 
-function ButtonAndProduct({ imageUrl }) {
+function ButtonAndProduct({ imageUrl, mobile }) {
 
   const trigger = useScrollTrigger()
 
@@ -21,7 +21,8 @@ function ButtonAndProduct({ imageUrl }) {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        ...(mobile && { width: '80%' })
       }}
     >
       <Product imageUrl={imageUrl} />

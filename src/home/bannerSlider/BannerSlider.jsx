@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Title from './title/Title'
 import Cards from './cards/Cards'
 import { animation } from '~/components/animation/Animation'
+import { useMediaQuery } from '@mui/material'
 import { Box, ButtonBase } from '@mui/material'
 
 
@@ -37,12 +38,13 @@ function BannerSlider({ images }) {
     imageRef.current = currentImage
   }, [currentImage])
 
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
   return (
     <Box
       sx={{
         width: '100%',
-        aspectRatio: '16/9',
+        aspectRatio: mobile ? '2/3' : '16/9',
         top: '0',
         zIndex: 0,
         position: 'relative',
@@ -73,14 +75,17 @@ function BannerSlider({ images }) {
             position: 'absolute'
           }}
         ></Box>
-        <Title titleDescription={images[currentImage]} key={currentImage}/>
-        <Cards images={images} currentImage={currentImage} currentCard={currentCard}/>
+        <Title titleDescription={images[currentImage]} mobile={mobile} key={currentImage}/>
+        {mobile ?
+          <></> :
+          <Cards images={images} currentImage={currentImage} currentCard={currentCard}/>
+        }
         <Box
           sx={{
             position: 'absolute',
-            right: 'calc(50% + 10% + 20px)',
-            bottom: 'calc(15% + 50px)',
-            transform: 'translate(0, 50%)',
+            right: mobile ? '50%' : 'calc(50% + 10% + 20px)',
+            bottom: mobile ? '10%' : 'calc(15% + 50px)',
+            transform: mobile ? 'translate(50%, 0)' : 'translate(0, 50%)',
             gap: 1,
             display: 'flex'
           }}

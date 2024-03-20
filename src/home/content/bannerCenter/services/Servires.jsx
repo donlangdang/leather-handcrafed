@@ -16,22 +16,24 @@ const services = [
   }
 ]
 
-function Servires() {
+function Servires({ mobile }) {
   return (
     <Box
       sx={{
-        width: '100%',
-        height: 'auto',
+        // width: '100%',
+        // height: 'auto',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
+        flexDirection: 'row',
         gap: '2rem',
-        padding: '0 15rem 0 15rem',
-        marginBottom: '3rem'
+        padding: mobile ? '0' : '0 15rem 0 15rem',
+        marginBottom: '3rem',
+        ...(mobile && { overflow: 'scroll' })
       }}
     >
       {services.map((service) => (
-        <BoxServices service={service} key={service.title}/>
+        <BoxServices service={service} key={service.title} mobile={mobile}/>
       ))}
     </Box>
   )

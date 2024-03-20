@@ -6,7 +6,7 @@ const imageKeyFrame = keyframes`
     transform: scale(1.1)
   }
 `
-function ImagePage({ imageUrl }) {
+function ImagePage({ imageUrl, mobile }) {
 
 
   return (
@@ -26,7 +26,7 @@ function ImagePage({ imageUrl }) {
           }
         }}
       >
-        <ButtonAndProduct imageUrl={imageUrl} />
+        <ButtonAndProduct imageUrl={imageUrl} mobile={mobile} />
         <Box
           component='img'
           src={imageUrl.url}

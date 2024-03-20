@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import MyButton from '~/components/navBar/myButtom'
 
-function Featured() {
+function Featured({ mobile }) {
   return (
     <Box
       sx={{
@@ -9,10 +9,12 @@ function Featured() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '0 15rem 0 15rem',
-        margin: '5rem 0 5rem 0',
+        padding: mobile ? '0' : '0 15rem 0 15rem',
+        margin: '4rem 0 4rem 0',
         position: 'relative',
-        bgcolor: 'rgb(236, 236, 236) '
+        bgcolor: 'rgb(236, 236, 236) ',
+        overflow: 'hidden',
+        ...(mobile && { flexDirection: 'column' })
       }}
     >
       <Box
@@ -22,7 +24,9 @@ function Featured() {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           flex: 1,
-          aspectRatio: '3/4'
+          aspectRatio: '3/4',
+          height: 'auto',
+          width: '100%'
         }}
       >
 

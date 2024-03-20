@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <NavBar />
-      {/* <Home images={images} />
-      <Footer /> */}
+      <Home images={images} />
+      <Footer />
     </>
   )
 }
