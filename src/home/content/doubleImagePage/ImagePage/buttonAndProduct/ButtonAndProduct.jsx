@@ -1,12 +1,11 @@
 import MyButton from '~/components/navBar/myButtom'
 import { animation } from '~/components/animation/Animation'
-import { Box, useScrollTrigger } from '@mui/material'
 import Product from './product/Product'
+import Box from '@mui/material/Box'
 
 
 function ButtonAndProduct({ imageUrl, mobile }) {
 
-  // const trigger = useScrollTrigger()
 
   return (
     <Box

@@ -10,7 +10,7 @@ const imageKeyFrame = keyframes`
 const cardKeyframes = keyframes`
   from {
     opacity: 0;
-    transform: translate(0, 100%);
+    transform: translate(0, 50%);
   }
 
   to {
@@ -30,8 +30,8 @@ function ImagePage({ imageUrl, mobile }) {
         position: 'relative',
         flex: 1,
         animation: `${cardKeyframes} ease-in-out`,
-        animationTimeline: 'view()',
-        animationRange: 'entry 10% contain 25%'
+        animationTimeline: 'view(90% 0%)',
+        // animationRange: 'entry 10% contain 25%'
       }}
     >
       <Box
