@@ -4,13 +4,13 @@ import { useScrollTrigger } from '@mui/material'
 
 function Product({ imageUrl }) {
 
-  const trigger = useScrollTrigger()
+  // const trigger = useScrollTrigger()
 
   return (
     <Typography
       sx={{
         color: 'white',
-        animation: trigger ? `${animation.titleKeyFrame} 1.5s ease-in-out 1 forwards` : 'none'
+        animation: `${animation.titleKeyFrame} 1.5s ease-in-out 1`
       }}
       variant="h4" align='center'
       gutterBottom
