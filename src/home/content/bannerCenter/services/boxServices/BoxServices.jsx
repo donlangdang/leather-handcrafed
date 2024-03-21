@@ -69,7 +69,21 @@ function BoxServices({ service, mobile }) {
             {service.description}
           </Typography>
         </Box>
-        <MyButton>
+        <MyButton
+          sx={{
+            bgcolor: 'white',
+            marginBottom: '2rem',
+            padding: '1rem 1.5rem',
+            fontSize: '0.75rem',
+            fontWeight: '700',
+            border: '1px solid white',
+            borderRadius: '3%',
+            '&::after': {
+              bottom: '30%',
+              width: '70%'
+            }
+          }}
+        >
           khám phá ngay
         </MyButton>
       </Box>
