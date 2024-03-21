@@ -1,11 +1,6 @@
 import ButtonAndProduct from './buttonAndProduct/ButtonAndProduct'
 import { Box, keyframes } from '@mui/material'
 
-const imageKeyFrame = keyframes`
-  to {
-    transform: scale(1.1)
-  }
-`
 
 const cardKeyframes = keyframes`
   from {
@@ -29,15 +24,16 @@ function ImagePage({ imageUrl, mobile }) {
         zIndex: 0,
         position: 'relative',
         flex: 1,
-        animation: `${cardKeyframes} ease-in-out`,
-        animationTimeline: 'view(90% 0%)',
+        animation: `${cardKeyframes} ease-in-out`
+        // animationTimeline: 'view(100% 0%)',
         // animationRange: 'entry 10% contain 25%'
       }}
     >
       <Box
         sx={{
+          transition: 'transform 0.5s',
           '&:hover': {
-            animation: `${imageKeyFrame} 0.3s ease-in-out 1 forwards`
+            transform: 'scale(1.1)'
           }
         }}
       >

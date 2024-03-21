@@ -6,14 +6,16 @@ import Cards from './cards/Cards'
 import { animation } from '~/components/animation/Animation'
 import { useMediaQuery } from '@mui/material'
 import { Box, ButtonBase } from '@mui/material'
+// import { keyframes } from '@mui/material'
 
 
 // const bannerSliderKeyframe = keyframes`
-//   from {
-//     transform: translate(0, 0)
+//   0% {
+//     transform: scale(1)
 //   }
-//   to {
-//     transform: translate(0, 50%)
+//   100% {
+//     transform: scale(1.2);
+//     opacity: 0
 //   }
 // `
 
@@ -53,11 +55,12 @@ function BannerSlider({ images }) {
     <Box
       sx={{
         width: '100%',
-        aspectRatio: mobile ? '2/3' : '16/9',
+        aspectRatio: mobile ? '1/2' : '16/9',
         top: '0',
         zIndex: 0,
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        marginBottom: '0.5rem'
         // animation: `${bannerSliderKeyframe} 1.2s ease-in-out`,
         // animationTimeline: 'view(0% 90%)',
       }}
