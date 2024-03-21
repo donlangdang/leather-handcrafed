@@ -6,7 +6,7 @@ import Product from './product/Product'
 
 function ButtonAndProduct({ imageUrl, mobile }) {
 
-  const trigger = useScrollTrigger()
+  // const trigger = useScrollTrigger()
 
   return (
     <Box
@@ -39,7 +39,7 @@ function ButtonAndProduct({ imageUrl, mobile }) {
             bottom: '30%',
             width: '70%'
           },
-          animation: trigger ? `${animation.titleKeyFrame} 1.2s ease-in-out 1 forwards` : 'none'
+          animation: `${animation.titleKeyFrame} 1.2s ease-in-out 1`
         }}
       >
         KHÁM PHÁ SẢN PHẨM

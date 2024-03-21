@@ -6,6 +6,18 @@ const imageKeyFrame = keyframes`
     transform: scale(1.1)
   }
 `
+
+const cardKeyframes = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+
+  to {
+    opacity: 1,
+    transform: translate(0, 0);
+  }
+`
 function ImagePage({ imageUrl, mobile }) {
 
 
@@ -16,7 +28,10 @@ function ImagePage({ imageUrl, mobile }) {
         overflow: 'hidden',
         zIndex: 0,
         position: 'relative',
-        flex: 1
+        flex: 1,
+        animation: `${cardKeyframes} ease-in-out`,
+        animationTimeline: 'view()',
+        animationRange: 'entry 10% contain 25%'
       }}
     >
       <Box
