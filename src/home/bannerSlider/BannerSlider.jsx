@@ -8,6 +8,15 @@ import { useMediaQuery } from '@mui/material'
 import { Box, ButtonBase } from '@mui/material'
 
 
+// const bannerSliderKeyframe = keyframes`
+//   from {
+//     transform: translate(0, 0)
+//   }
+//   to {
+//     transform: translate(0, 50%)
+//   }
+// `
+
 function BannerSlider({ images }) {
 
   const [currentImage, setCurrentImage] = useState(0)
@@ -49,6 +58,8 @@ function BannerSlider({ images }) {
         zIndex: 0,
         position: 'relative',
         overflow: 'hidden'
+        // animation: `${bannerSliderKeyframe} 1.2s ease-in-out`,
+        // animationTimeline: 'view(0% 90%)',
       }}
     >
       <Box

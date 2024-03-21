@@ -1,10 +1,8 @@
 import { animation } from '~/components/animation/Animation'
 import Typography from '@mui/material/Typography'
-import { useScrollTrigger } from '@mui/material'
 
 function Product({ imageUrl }) {
 
-  // const trigger = useScrollTrigger()
 
   return (
     <Typography
