@@ -1,20 +1,18 @@
-import React from 'react'
 import ImagePage from './ImagePage/ImagePage'
 import Box from '@mui/material/Box'
 import { useMediaQuery, useScrollTrigger } from '@mui/material'
 import { animation } from '~/components/animation/Animation'
 
 
-function DoubleImagePage({ imageUrl }) {
+function DoubleImagePage({ imageUrl, Threshold }) {
 
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
 
-  const onScrollElement = document.getElementsByClassName('onscroll')
-
   const scrollTrigger = useScrollTrigger({
-    target: ,
+    target: imageUrl.window ? window() : undefined,
     disableHysteresis: true,
+    threshold: Threshold
   })
 
   return (
@@ -29,7 +27,8 @@ function DoubleImagePage({ imageUrl }) {
           padding: '0.5rem 1rem',
           position: 'relative',
           ...(mobile && { flexDirection: 'column' }),
-          animation: scrollTrigger ? `${animation.titleKeyFrame} 1.2s ease-in-out 1 forwards` : 'none'
+          animation: scrollTrigger ? `${animation.titleKeyFrame} 0.5s ease-in-out 1 forwards` : 'none',
+          opacity: 0.3
         }}
       >
         {imageUrl.map((image) => (

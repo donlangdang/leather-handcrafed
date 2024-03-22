@@ -35,8 +35,8 @@ const lineTwo = [
 function Content() {
   return (
     <>
-      <DoubleImagePage imageUrl={imageUrl}/>
-      <DoubleImagePage imageUrl={lineTwo}/>
+      <DoubleImagePage imageUrl={imageUrl} Threshold='200'/>
+      <DoubleImagePage imageUrl={lineTwo} Threshold='700'/>
       <BannerCenter />
     </>
   )
