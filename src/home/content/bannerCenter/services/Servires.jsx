@@ -16,7 +16,7 @@ const services = [
   }
 ]
 
-function Servires({ mobile }) {
+function Servires({ mobile, tablet }) {
   return (
     <Box
       sx={{
@@ -27,7 +27,7 @@ function Servires({ mobile }) {
         // justifyContent: 'center',
         flexDirection: 'row',
         gap: '2rem',
-        padding: mobile ? '0' : '0 15rem 0 15rem',
+        padding: mobile || tablet ? '0' : '0 15rem 0 15rem',
         marginBottom: '3rem',
         bgcolor: 'rgb(236, 236, 236)',
         ...(mobile && { overflow: 'scroll' })

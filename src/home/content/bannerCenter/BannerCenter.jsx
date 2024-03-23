@@ -6,6 +6,7 @@ import { Typography, useMediaQuery } from '@mui/material'
 function BannerCenter() {
 
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+  const tablet = useMediaQuery((theme) => theme.breakpoints.between('sm', 'lg'))
 
   return (
     <Box
@@ -37,7 +38,7 @@ function BannerCenter() {
             fontWeight: '500',
             textAlign: 'center'
           }}
-          variant={mobile ? 'h5' : 'h1'}
+          variant={mobile ? 'h5' : (tablet ? 'h3' : 'h1')}
         >
           Goda Decor & Leather Handcrafted
         </Typography>
@@ -55,7 +56,7 @@ function BannerCenter() {
       >
         đặc biệt
       </Box>
-      <Featured mobile={mobile} />
+      <Featured mobile={mobile} tablet={tablet} />
       <Box
         sx={{
           textTransform: 'uppercase',
@@ -69,7 +70,7 @@ function BannerCenter() {
       >
         dịch vụ goda
       </Box>
-      <Servires mobile={mobile} />
+      <Servires mobile={mobile} tablet={tablet} />
     </Box>
   )
 }

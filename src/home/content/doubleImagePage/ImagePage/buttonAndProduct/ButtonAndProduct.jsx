@@ -2,10 +2,12 @@ import MyButton from '~/components/navBar/myButtom'
 import { animation } from '~/components/animation/Animation'
 import Product from './product/Product'
 import Box from '@mui/material/Box'
+import { useMediaQuery } from '@mui/material'
 
 
 function ButtonAndProduct({ imageUrl, mobile }) {
 
+  const tablet = useMediaQuery((theme) => theme.breakpoints.between('sm', 'lg'))
 
   return (
     <Box
@@ -21,7 +23,7 @@ function ButtonAndProduct({ imageUrl, mobile }) {
         justifyContent: 'center',
         flexDirection: 'column',
         textTransform: 'uppercase',
-        ...(mobile && { width: '80%' })
+        ...(mobile || tablet && { width: '80%' })
       }}
     >
       <Product imageUrl={imageUrl} />

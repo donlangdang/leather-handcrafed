@@ -50,12 +50,14 @@ function BannerSlider({ images }) {
   }, [currentImage])
 
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+  const tablet = useMediaQuery((theme) => theme.breakpoints.between('sm', 'lg'))
 
   return (
     <Box
       sx={{
         width: '100%',
         aspectRatio: mobile ? '1/2' : '16/9',
+        ...(tablet && { aspectRatio: '1/1' }),
         top: '0',
         zIndex: 0,
         position: 'relative',
@@ -89,17 +91,17 @@ function BannerSlider({ images }) {
             position: 'absolute'
           }}
         ></Box>
-        <Title titleDescription={images[currentImage]} mobile={mobile} key={currentImage}/>
-        {mobile ?
+        <Title titleDescription={images[currentImage]} mobile={mobile} tablet={tablet} key={currentImage}/>
+        {mobile || tablet ?
           <></> :
           <Cards images={images} currentImage={currentImage} currentCard={currentCard}/>
         }
         <Box
           sx={{
             position: 'absolute',
-            right: mobile ? '50%' : 'calc(50% + 10% + 20px)',
-            bottom: mobile ? '10%' : 'calc(15% + 50px)',
-            transform: mobile ? 'translate(50%, 0)' : 'translate(0, 50%)',
+            right: mobile || tablet ? '50%' : 'calc(50% + 10% + 20px)',
+            bottom: mobile || tablet ? '10%' : 'calc(15% + 50px)',
+            transform: mobile || tablet ? 'translate(50%, 0)' : 'translate(0, 50%)',
             gap: 1,
             display: 'flex'
           }}

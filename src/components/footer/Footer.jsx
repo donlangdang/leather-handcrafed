@@ -10,6 +10,7 @@ import { useMediaQuery } from '@mui/material'
 function Footer() {
 
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+  const tablet = useMediaQuery((theme) => theme.breakpoints.between('sm', 'lg'))
 
   return (
     <Box
@@ -23,7 +24,7 @@ function Footer() {
         sx={{
           width: '100%',
           height: '100%',
-          padding: mobile ? '2rem 2rem 2rem 2rem' : '2rem 15rem 2rem 15rem',
+          padding: mobile || tablet ? '2rem 2rem 2rem 2rem' : '2rem 15rem 2rem 15rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',

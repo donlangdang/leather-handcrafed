@@ -1,19 +1,19 @@
 import ImagePage from './ImagePage/ImagePage'
 import Box from '@mui/material/Box'
-import { useMediaQuery, useScrollTrigger } from '@mui/material'
+import { useMediaQuery } from '@mui/material'
 import { animation } from '~/components/animation/Animation'
 
 
-function DoubleImagePage({ imageUrl, Threshold }) {
+function DoubleImagePage({ imageUrl }) {
 
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
-
-  const scrollTrigger = useScrollTrigger({
-    target: imageUrl.window ? window() : undefined,
-    disableHysteresis: true,
-    threshold: Threshold
-  })
+  // const scrollTrigger = true
+  // const scrollTrigger = useScrollTrigger({
+  //   target: window,
+  //   disableHysteresis: true,
+  //   threshold: Threshold
+  // })
 
   return (
     <div className='onscroll'>
@@ -27,7 +27,7 @@ function DoubleImagePage({ imageUrl, Threshold }) {
           padding: '0.5rem 1rem',
           position: 'relative',
           ...(mobile && { flexDirection: 'column' }),
-          animation: scrollTrigger ? `${animation.titleKeyFrame} 0.5s ease-in-out 1 forwards` : 'none',
+          animation: `${animation.titleKeyFrame} 0.5s ease-in-out 1 forwards`,
           opacity: 0.3
         }}
       >

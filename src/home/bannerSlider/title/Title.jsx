@@ -3,20 +3,20 @@ import { animation } from '~/components/animation/Animation'
 import { Box, Typography } from '@mui/material'
 
 
-function Title({ titleDescription, mobile }) {
+function Title({ titleDescription, mobile, tablet }) {
   return (<Box
     sx={{
       position: 'absolute',
-      top: mobile ? '50%' : '15%',
-      left: mobile ? '50%' : '5%',
-      ...(mobile && { transform: 'translate(-50%, -50%)' }),
+      top: mobile || tablet ? '50%' : '15%',
+      left: mobile || tablet ? '50%' : '5%',
+      ...((mobile || tablet) && { transform: 'translate(-50%, -50%)' }),
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       justifyItems: 'center',
       flexDirection: 'column',
-      width: mobile ? '90%' : '40%',
-      height: mobile ? '90%' : '50%',
+      width: mobile || tablet ? '90%' : '40%',
+      height: mobile || tablet ? '90%' : '50%',
       color: 'white',
       gap: 1
     }}

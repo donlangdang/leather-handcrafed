@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import MyButton from '~/components/navBar/myButtom'
 
-function Featured({ mobile }) {
+function Featured({ mobile, tablet }) {
   return (
     <Box
       sx={{
@@ -9,7 +9,7 @@ function Featured({ mobile }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: mobile ? '0' : '0 15rem 0 15rem',
+        padding: mobile || tablet ? '0' : '0 15rem 0 15rem',
         margin: '4rem 0 4rem 0',
         position: 'relative',
         bgcolor: 'rgb(236, 236, 236) ',
