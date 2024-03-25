@@ -1,0 +1,21 @@
+.banner {
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.bannerImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.title {
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}

@@ -32,6 +32,7 @@ function CenterNavbar() {
     }}
     >
       <MyButton
+        href='/'
         sx={{
           '&::after': {
             background: trigger ? 'black' : 'white'

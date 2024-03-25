@@ -36,6 +36,7 @@ function Title({ titleDescription, mobile, tablet }) {
       {titleDescription?.description}
     </Typography>
     <MyButton
+      href='/leanrmore'
       sx={{
         animation: `${animation.titleKeyFrame} 1.7s ease-in-out 1 forwards`,
         padding: '1rem 1.5rem',
