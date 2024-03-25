@@ -59,12 +59,12 @@ const prevCardKeyFrame = keyframes`
 const titleKeyFrame = keyframes`
   from {
     opacity: 0.3;
-    ${'' /* transform: translate(0, 50%); */}
+    transform: translate(0, 100%);
     filter: blur(20px)
   }
   to {
     opacity: 1;
-    ${'' /* transform: translate(0,0); */}
+    transform: translate(0,0);
     filter: blur(0)
   }
 `

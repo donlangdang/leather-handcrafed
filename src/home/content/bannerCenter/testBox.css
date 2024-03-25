@@ -1,0 +1,6 @@
+/* lần sau làm sẽ làm ra file css vì component MUI vẫn nhận className và id */
+
+.testBox {
+  background-color: black;
+  color: white;
+}
