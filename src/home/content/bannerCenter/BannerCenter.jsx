@@ -2,6 +2,7 @@ import Box from '@mui/material/Box'
 import Featured from './featured/Featured'
 import Servires from './services/Servires'
 import { Typography, useMediaQuery } from '@mui/material'
+import './testBox.css'
 
 function BannerCenter() {
 
@@ -44,6 +45,7 @@ function BannerCenter() {
         </Typography>
       </Box>
       <Box
+        className='testBox'
         sx={{
           textTransform: 'uppercase',
           display: 'flex',
@@ -58,6 +60,7 @@ function BannerCenter() {
       </Box>
       <Featured mobile={mobile} tablet={tablet} />
       <Box
+        className='testBox'
         sx={{
           textTransform: 'uppercase',
           display: 'flex',
