@@ -1,16 +1,16 @@
 import IconButton from '@mui/material/IconButton'
-import { useMediaQuery, useScrollTrigger } from '@mui/material/'
+import { useMediaQuery } from '@mui/material/'
 import LanguageIcon from '@mui/icons-material/Language'
 // import theme from '~/theme'
 import Box from '@mui/material/Box'
 import ResponsiveMenu from './responsiveLayout/ResponsiveMenu'
 
-function Language() {
+function Language({ trigger }) {
 
-  const trigger = useScrollTrigger({
-    target: window,
-    disableHysteresis: true
-  })
+  // const trigger = useScrollTrigger({
+  //   target: window,
+  //   disableHysteresis: true
+  // })
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
   return (

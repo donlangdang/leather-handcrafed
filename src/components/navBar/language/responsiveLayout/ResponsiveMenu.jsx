@@ -5,10 +5,11 @@ import Button from '@mui/material/Button'
 import List from '@mui/material/List'
 import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
+// import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useScrollTrigger } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 function ResponsiveMenu() {
   const [open, setOpen] = React.useState(false)
@@ -28,16 +29,16 @@ function ResponsiveMenu() {
         {['Trang Chủ', 'Sản Phẩm', 'Giới Thiệu', 'Liên Hệ'].map((text, index) => {
           if (index === 0) {
             <ListItem key={text} disablePadding>
-              <ListItemButton href='/'>
+              <Link to='/'>
                 <ListItemText primary={text} />
-              </ListItemButton>
+              </Link>
             </ListItem>
           }
           return (
             <ListItem key={text} disablePadding>
-              <ListItemButton>
+              <Link>
                 <ListItemText primary={text} />
-              </ListItemButton>
+              </Link>
             </ListItem>
           )
         }

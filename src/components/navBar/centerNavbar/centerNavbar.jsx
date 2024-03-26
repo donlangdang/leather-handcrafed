@@ -1,17 +1,18 @@
 import React from 'react'
-import MyButton from '~/components/navBar/myButtom'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { useScrollTrigger } from '@mui/material/'
-import { Box } from '@mui/material'
+import Box from '@mui/material/Box'
+import { Link } from 'react-router-dom'
+import MyButton from '~/components/navBar/myButtom'
 
-function CenterNavbar() {
+function CenterNavbar({ trigger }) {
 
-  const trigger = useScrollTrigger({
-    target: window,
-    disableHysteresis: true
-  })
+  // const trigger = useScrollTrigger({
+  //   target: window,
+  //   disableHysteresis: true
+  // })
 
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
@@ -31,14 +32,17 @@ function CenterNavbar() {
       justifyContent: 'center'
     }}
     >
-      <MyButton
-        href='/'
-        sx={{
-          '&::after': {
-            background: trigger ? 'black' : 'white'
-          }
-        }}
-      >Trang Chủ</MyButton>
+      <Link to='/' style={{ color : trigger ? 'black' : 'white' }}>
+        <MyButton
+          sx={{
+            '&::after': {
+              background: trigger ? 'black' : 'white'
+            }
+          }}
+        >
+            Trang Chủ
+        </MyButton>
+      </Link>
       <MyButton
         sx={{
           '&::after': {
