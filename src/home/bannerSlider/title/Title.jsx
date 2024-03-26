@@ -1,6 +1,7 @@
 import MyButton from '~/components/navBar/myButtom'
 import { animation } from '~/components/animation/Animation'
 import { Box, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 
 function Title({ titleDescription, mobile, tablet }) {
@@ -35,28 +36,29 @@ function Title({ titleDescription, mobile, tablet }) {
     >
       {titleDescription?.description}
     </Typography>
-    <MyButton
-      href='/leanrmore'
-      sx={{
-        animation: `${animation.titleKeyFrame} 1.7s ease-in-out 1 forwards`,
-        padding: '1rem 1.5rem',
-        fontSize: '0.75rem',
-        bgcolor: 'white',
-        fontWeight: '700',
-        color: 'black',
-        width: 'auto',
-        textTransform: 'uppercase',
-        boxSizing: 'content-box',
-        border: '1px solid white',
-        borderRadius: '3%',
-        // border: '1px solid black',
-        '&::after': {
-          bottom: '30%',
-          width: '70%'
-        }
-      }}>
-      tìm hiểu thêm
-    </MyButton>
+    <Link to='leanrmore'>
+      <MyButton
+        sx={{
+          animation: `${animation.titleKeyFrame} 1.7s ease-in-out 1 forwards`,
+          padding: '1rem 1.5rem',
+          fontSize: '0.75rem',
+          bgcolor: 'white',
+          fontWeight: '700',
+          color: 'black',
+          width: 'auto',
+          textTransform: 'uppercase',
+          boxSizing: 'content-box',
+          border: '1px solid white',
+          borderRadius: '3%',
+          // border: '1px solid black',
+          '&::after': {
+            bottom: '30%',
+            width: '70%'
+          }
+        }}>
+        tìm hiểu thêm
+      </MyButton>
+    </Link>
   </Box>
   )
 }
