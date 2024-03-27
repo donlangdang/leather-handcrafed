@@ -25,7 +25,7 @@ function ResponsiveMenu() {
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
-      <List>
+      <List sx={{ display: 'flex', flexDirection: 'column', gap: 2, paddingTop: '2rem' }}>
         {['Trang Chủ', 'Sản Phẩm', 'Giới Thiệu', 'Liên Hệ'].map((text, index) => {
           if (index === 0) {
             <ListItem key={text} disablePadding>
@@ -35,9 +35,17 @@ function ResponsiveMenu() {
             </ListItem>
           }
           return (
-            <ListItem key={text} disablePadding>
-              <Link>
-                <ListItemText primary={text} />
+            <ListItem
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                paddingLeft: '2rem'
+              }}
+              key={text}
+              disablePadding
+            >
+              <Link style={{ textDecoration: 'none', color: 'black' }}>
+                <ListItemText primaryTypographyProps={{ style: { fontWeight: '500' } }} primary={text} />
               </Link>
             </ListItem>
           )
