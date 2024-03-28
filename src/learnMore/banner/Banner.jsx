@@ -26,21 +26,27 @@ function Banner() {
 
 
   return (
-    <Box className='container'>
-      <Box className='banner' ref={bannerRef}>
-        <Box className='title'>
-          <Typography
-            sx={{
-              fontWeight: '500'
-            }}
-            variant='h2'
-          >
-            goda decor leather handcrafted
-          </Typography>
-        </Box>
-      </Box>
-      <Box className='content'>
-        lorem asd kmasom oka mijjaw nakoia asjk mnaiu n jkask
+    <Box className='banner' ref={bannerRef}>
+      <Box className='title'>
+        <Typography
+          sx={{
+            fontWeight: '500',
+            flex: '1'
+          }}
+          variant='h4'
+        >
+          goda decor leather handcrafted
+        </Typography>
+        <Box sx={{ height: '100%', width: '2px', bgcolor: 'white' }} />
+        <Typography
+          sx={{
+            fontWeight: '500',
+            flex: '1'
+          }}
+          variant='subtitle1'
+        >
+          chuyên gia công các sản phẩm từ da thật, đồ decor làm từ da và phục hồi các sản phẩm làm từ da thật cao cấp
+        </Typography>
       </Box>
     </Box>
   )
