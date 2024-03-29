@@ -1,8 +1,9 @@
 import leatherIcon from '~/assets/leather.svg?react'
 import SvgIcon from '@mui/material/SvgIcon'
 import { Box } from '@mui/material'
+import { Link } from 'react-router-dom'
 
-function Logo() {
+function Logo({ trigger }) {
   return (
     <Box sx={{
       display: 'flex',
@@ -17,9 +18,12 @@ function Logo() {
       flex: 1
     }}
     >
-      <SvgIcon component={leatherIcon} fontSize='large' inheritViewBox
-      />
-      GoDa Decor
+      <Link to='/' style={{ textDecoration: 'none', color: trigger ? 'black' : 'white' }}>
+        <SvgIcon component={leatherIcon} fontSize='large' inheritViewBox/>
+      </Link>
+      <Link to='/' style={{ textDecoration: 'none', color: trigger ? 'black' : 'white' }}>
+        GoDa Decor
+      </Link>
     </Box>
   )
 }

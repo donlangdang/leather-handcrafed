@@ -33,7 +33,7 @@ function NavBar() {
         // color: 'white'
       }}
     >
-      <Logo />
+      <Logo trigger={trigger} />
       {mobile ? <></> : <CenterNavbar trigger={trigger} /> }
       <Language trigger={trigger} />
     </Box>

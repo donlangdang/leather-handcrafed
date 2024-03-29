@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import './banner.css'
 import { Typography } from '@mui/material'
-import { useEffect, useRef } from 'react'
+// import { useEffect, useRef } from 'react'
 
 
 function Banner() {
@@ -10,23 +10,23 @@ function Banner() {
   // b2: ở đây sau khi rendẻr ra giao diện thì useEffect mới được gọi và thực hiện callback 1 lần vì dependencies là array rỗng
   // note: vì useEffect được khai báo và chạy callback sau khi component được mount vì vậy bannerRef.current là DOM
   // đây là cách lấy ra DOM
-  const bannerRef = useRef()
-  useEffect(() => {
-    const element = bannerRef.current
-    // console.log('🚀 ~ Banner ~ element:', element)
-    // const observer = new IntersectionObserver(() => {
+  // const bannerRef = useRef()
+  // useEffect(() => {
+  //   const element = bannerRef.current
+  // console.log('🚀 ~ Banner ~ element:', element)
+  // const observer = new IntersectionObserver(() => {
 
-    // }, {
-    //   root: null,
-    //   rootMargin: '0px',
-    //   threshold:  0
-    // }
-    // )
-  }, [])
+  // }, {
+  //   root: null,
+  //   rootMargin: '0px',
+  //   threshold:  0
+  // }
+  // )
+  // }, [])
 
 
   return (
-    <Box className='banner' ref={bannerRef}>
+    <Box className='banner'>
       <Box className='title'>
         <Typography
           sx={{
