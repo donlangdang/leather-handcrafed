@@ -16,7 +16,6 @@ function ButtonAndProduct({ imageUrl, mobile }) {
         bottom: '20%',
         left: '50%',
         transform: 'translate(-50%, 0)',
-        // bgcolor: '#333',
         zIndex: 1,
         display: 'flex',
         alignItems: 'center',
@@ -40,7 +39,7 @@ function ButtonAndProduct({ imageUrl, mobile }) {
             bottom: '30%',
             width: '70%'
           },
-          animation: `${animation.titleKeyFrame} 1.2s ease-in-out 1`
+          animation: `${animation.titleKeyFrame} 2s ease-in-out 1`
         }}
       >
         KHÁM PHÁ SẢN PHẨM

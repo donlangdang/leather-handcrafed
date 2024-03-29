@@ -8,6 +8,7 @@
   animation: banner linear forwards;
   animation-timeline: view();
   animation-range: exit;
+  margin-bottom: 3rem;
 }
 
 @keyframes banner {

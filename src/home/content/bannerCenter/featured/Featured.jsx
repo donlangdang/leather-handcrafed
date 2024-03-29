@@ -19,7 +19,7 @@ function Featured({ mobile, tablet }) {
     >
       <Box
         sx={{
-          backgroundImage: 'url(https://scontent.fbmv1-1.fna.fbcdn.net/v/t39.30808-6/335225983_957708238560421_8577306066286279411_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=TWKKLCPR4tEAX9MjzlI&_nc_ht=scontent.fbmv1-1.fna&oh=00_AfB3XfSLx1jaFpLXBlen0T0qdKALMCZNN7D4NBis3SNPZA&oe=65FAE1AA)',
+          backgroundImage: 'url(http://localhost:5000/src/assets/image/dacbiet.jpg)',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
