@@ -1,35 +1,30 @@
 import Box from '@mui/material/Box'
-import './content.css'
+import BoxContent from './boxContent/BoxContent'
+import { Typography } from '@mui/material'
 
 function Content() {
   return (
-    <Box className='content'>
-      <Box
-        component='img'
+    <Box
+      sx={{
+        position: 'relative',
+        zIndex: '3',
+        width: '100%',
+        height: 'auto',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        flexDirection: 'column'
+      }}
+    >
+      <Typography
         sx={{
-          width: '60%',
-          aspectRatio: '3/2',
-          objectFit: 'cover'
+          paddingBottom: '2rem'
         }}
-        src='http://localhost:5000/src/assets/image/contentBanner.jpg'
-        alt="Đây là ảnh"
-      />
-      <Box
-        sx={{
-          position: 'absolute',
-          width: '30%',
-          aspectRatio: '9/11',
-          bgcolor: 'blur(33px)',
-          overflow: 'clip',
-          backdropFilter: 'blur(10px)',
-          right: '10%',
-          border: '2px solid white',
-          boxSizing: 'content-box',
-          fontSize: '0.75rem',
-          textAlign: 'center'
-        }}
-      >
-      </Box>
+        variant='h4'>
+        các sản phẩm của chúng tôi
+      </Typography>
+      <BoxContent />
     </Box>
   )
 }
