@@ -1,7 +1,11 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
+import { useMediaQuery } from '@mui/material'
 
 function BoxContent({ API }) {
+
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+
   return (
     <Box
       sx={{
@@ -20,9 +24,10 @@ function BoxContent({ API }) {
       <Typography
         sx={{
           paddingBottom: '2rem',
-          textTransform: 'uppercase'
+          textTransform: 'uppercase',
+          textAlign: 'center'
         }}
-        variant='h3'>
+        variant={mobile ? 'h5' : 'h3'}>
         {API.title}
       </Typography>
       <Box
@@ -32,7 +37,8 @@ function BoxContent({ API }) {
           justifyContent: 'center',
           width: '100%',
           height: 'auto',
-          gap: '1rem'
+          gap: '1rem',
+          ...(mobile && { flexDirection: 'column' })
         }}
       >
         <Box

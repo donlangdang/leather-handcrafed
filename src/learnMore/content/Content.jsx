@@ -28,7 +28,7 @@ function Content() {
   return (
     <>
       {fakeAPI.map((API) => (
-        <BoxContent API={API} key={API} />
+        <BoxContent API={API} key={API.title} />
       ))}
     </>
   )
