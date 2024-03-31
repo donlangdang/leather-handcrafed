@@ -10,8 +10,8 @@ function LearnMore() {
         position: 'relative',
         overflowX: 'clip',
         width: '100%',
-        height: '3000px',
-        bgcolor: 'black'
+        height: 'auto',
+        bgcolor: '#6B240C'
       }}
     >
       <Banner />

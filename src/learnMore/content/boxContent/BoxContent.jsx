@@ -1,44 +1,76 @@
 import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 
-function BoxContent() {
+function BoxContent({ API }) {
   return (
     <Box
       sx={{
+        zIndex: '3',
+        width: '100%',
+        height: 'auto',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'relative',
-        width: '100%',
-        height: 'auto'
+        color: 'white',
+        flexDirection: 'column',
+        padding: '0 1rem 0 1rem',
+        paddingBottom: '3rem'
       }}
     >
-      <Box
-        component='img'
+      <Typography
         sx={{
-          width: '60%',
-          aspectRatio: '3/2',
-          objectFit: 'cover',
-          border: '2px solid white',
-          position: 'relative'
+          paddingBottom: '2rem',
+          textTransform: 'uppercase'
         }}
-        src='http://localhost:5000/src/assets/image/contentBanner.jpg'
-        alt="Đây là ảnh"
-      />
+        variant='h3'>
+        {API.title}
+      </Typography>
       <Box
         sx={{
-          position: 'absolute',
-          height: '80%',
-          aspectRatio: '2/3',
-          overflow: 'clip',
-          backdropFilter: 'blur(10px)',
-          right: '10%',
-          top: '10%',
-          border: '2px solid white',
-          boxSizing: 'content-box',
-          fontSize: '0.75rem',
-          textAlign: 'center'
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100%',
+          height: 'auto',
+          gap: '1rem'
         }}
       >
+        <Box
+          sx={{
+            height: 'auto',
+            width: '100%',
+            aspectRatio: '4/3',
+            flex: '1'
+          }}
+        >
+          <Box
+            component='img'
+            sx={{
+              width: '100%',
+              border: '2px solid white'
+            }}
+            src='http://localhost:5000/src/assets/image/contentBanner.jpg'
+            alt="Đây là ảnh"
+          />
+        </Box>
+        <Box
+          sx={{
+            width: '100%',
+            height: 'auto',
+            aspectRatio: '4/3',
+            backdropFilter: 'blur(10px)',
+            bgcolor: 'rgba(255, 255, 255, 0.1)',
+            border: '2px solid white',
+            fontSize: '0.75rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            flex: '1'
+          }}
+        >
+          {API.description}
+        </Box>
       </Box>
     </Box>
   )
