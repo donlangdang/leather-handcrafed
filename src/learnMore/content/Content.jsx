@@ -1,31 +1,36 @@
-import Box from '@mui/material/Box'
 import BoxContent from './boxContent/BoxContent'
-import { Typography } from '@mui/material'
+
+
+const fakeAPI = [
+  {
+    title: 'qui trình thiết kế và sản xuất',
+    description: 'lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd '
+  },
+  {
+    title: 'thiết kế',
+    description: 'lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd '
+  },
+  {
+    title: 'lựa chọn mẫu mã và loại da',
+    description: 'lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd '
+  },
+  {
+    title: 'vẽ và lên rập',
+    description: 'lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd '
+  },
+  {
+    title: 'cắt rập và làm theo mẫu đã được thiết kế',
+    description: 'lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd lorem ádasda srwekfmwckem kèmkmaaaaaaaasmkd '
+  }
+]
 
 function Content() {
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        zIndex: '3',
-        width: '100%',
-        height: 'auto',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'white',
-        flexDirection: 'column'
-      }}
-    >
-      <Typography
-        sx={{
-          paddingBottom: '2rem'
-        }}
-        variant='h4'>
-        các sản phẩm của chúng tôi
-      </Typography>
-      <BoxContent />
-    </Box>
+    <>
+      {fakeAPI.map((API) => (
+        <BoxContent API={API} key={API} />
+      ))}
+    </>
   )
 }
 
