@@ -2,7 +2,7 @@ import React from 'react'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { useScrollTrigger } from '@mui/material/'
+// import { useScrollTrigger } from '@mui/material/'
 import Box from '@mui/material/Box'
 import { Link } from 'react-router-dom'
 import MyButton from '~/components/navBar/myButtom'
@@ -108,15 +108,17 @@ function CenterNavbar({ trigger }) {
           <MyButton>Đồ Decor</MyButton>
         </MenuItem>
       </Menu>
-      <MyButton
-        sx={{
-          '&::after': {
-            background: trigger ? 'black' : 'white'
-          }
-        }}
-      >
-        Giới Thiệu
-      </MyButton>
+      <Link to='/aboutus' style={{ color : trigger ? 'black' : 'white' }}>
+        <MyButton
+          sx={{
+            '&::after': {
+              background: trigger ? 'black' : 'white'
+            }
+          }}
+        >
+          Giới Thiệu
+        </MyButton>
+      </Link>
       <MyButton
         sx={{
           '&::after': {

@@ -13,6 +13,7 @@ import theme from './theme.js'
 import Home from '~/home/Home.jsx'
 import images from '~/apis/images.jsx'
 import { Container } from '@mui/material'
+import AboutUs from '~/aboutUs/AboutUs.jsx'
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/leanrmore',
         element: <LearnMore />
+      },
+      {
+        path: '/aboutus',
+        element: <AboutUs />
       }
     ]
   }
