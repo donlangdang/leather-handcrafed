@@ -6,12 +6,11 @@ import { useInView } from 'react-intersection-observer'
 const cardKeyframes = keyframes`
   from {
     opacity: 0;
-    transform: scale(1.2)
+    transform: translate(0, 50%)
   }
-
   to {
     opacity: 1;
-    transform: scale(1)
+    transform: translate(0, 0)
   }
 `
 function ImagePage({ imageUrl, mobile }) {

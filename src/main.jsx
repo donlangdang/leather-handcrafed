@@ -12,6 +12,7 @@ import App from './App.jsx'
 import theme from './theme.js'
 import Home from '~/home/Home.jsx'
 import images from '~/apis/images.jsx'
+import { Container } from '@mui/material'
 
 
 const router = createBrowserRouter([
@@ -37,7 +38,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <CssVarsProvider theme={theme}>
       <CssBaseline />
-      <RouterProvider router={router} />
+      <Container maxWidth='xxl' disableGutters={true}>
+        <RouterProvider router={router} />
+      </Container>
     </CssVarsProvider>
   </React.StrictMode>
 )
