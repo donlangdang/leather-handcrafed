@@ -11,7 +11,7 @@ function LearnMore() {
         overflowX: 'clip',
         width: '100%',
         height: 'auto',
-        bgcolor: '#6B240C'
+        bgcolor: '#333'
       }}
     >
       <Banner />

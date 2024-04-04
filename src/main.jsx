@@ -6,13 +6,13 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom'
+import Container from '@mui/material/Container'
 import ErrorPage from '~/error-page'
 import LearnMore from '~/learnMore/LearnMore.jsx'
-import App from './App.jsx'
-import theme from './theme.js'
+import App from '~/App.jsx'
+import theme from '~/theme.js'
 import Home from '~/home/Home.jsx'
 import images from '~/apis/images.jsx'
-import { Container } from '@mui/material'
 import AboutUs from '~/aboutUs/AboutUs.jsx'
 
 
