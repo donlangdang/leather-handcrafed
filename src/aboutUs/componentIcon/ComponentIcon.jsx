@@ -8,14 +8,17 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 const componentIcon = [
   {
     id: 1,
+    url: 'https://www.facebook.com/don.phaolo/',
     component: <FacebookIcon fontSize='large' sx={{ color: 'white' }} />
   },
   {
     id: 2,
+    url: 'https://www.facebook.com/don.phaolo/',
     component: <XIcon fontSize='large' sx={{ color: 'white' }} />
   },
   {
     id: 3,
+    url: 'https://www.facebook.com/don.phaolo/',
     component: <InstagramIcon fontSize='large' sx={{ color: 'white' }} />
   }
 ]
@@ -33,7 +36,7 @@ function ComponentIcon() {
       {componentIcon.map((components) =>
         (
           <Link
-            href='https://www.facebook.com/don.phaolo/'
+            href={components.url}
             sx={{
               display: 'flex',
               alignItems: 'center'
