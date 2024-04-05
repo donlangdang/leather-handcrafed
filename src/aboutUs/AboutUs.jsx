@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import ComponentIcon from './componentIcon/ComponentIcon'
 import Biography from './biographi/Biography'
+import Script from './script/Script'
 
 
 function AboutUs() {
@@ -23,14 +24,16 @@ function AboutUs() {
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
-          width: '60%',
+          width: '50%',
           height: 'auto',
-          gap: 2
+          gap: 2,
+          paddingBottom: '8rem'
         }}
       >
         <Biography />
         <ComponentIcon />
       </Box>
+      <Script />
     </Box>
   )
 }
