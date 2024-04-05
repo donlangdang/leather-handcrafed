@@ -18,7 +18,15 @@ function Logo({ trigger }) {
       flex: 1
     }}
     >
-      <Link to='/' style={{ textDecoration: 'none', color: trigger ? 'black' : 'white' }}>
+      <Link
+        to='/'
+        style={{
+          textDecoration: 'none',
+          color: trigger ? 'black' : 'white',
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
         <SvgIcon component={leatherIcon} fontSize='large' inheritViewBox/>
       </Link>
       <Link to='/' style={{ textDecoration: 'none', color: trigger ? 'black' : 'white' }}>

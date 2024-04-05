@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
-import images from '~/apis/images'
+import ComponentIcon from './componentIcon/ComponentIcon'
+import Biography from './biographi/Biography'
 
 
 function AboutUs() {
@@ -12,7 +13,8 @@ function AboutUs() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        paddingTop: '5rem'
       }}
     >
       <Box
@@ -23,30 +25,11 @@ function AboutUs() {
           flexDirection: 'column',
           width: '60%',
           height: 'auto',
-          paddingTop: '10vh',
-          gap: 4
+          gap: 2
         }}
       >
-        <Box
-          sx={{
-            color: 'white',
-            fontSize: '3rem',
-            fontWeight: '500'
-          }}
-        >Tiểu Sử</Box>
-        <Box
-          sx={{
-            width: '50%',
-            aspectRatio: '1/1',
-            height: 'auto',
-            backgroundImage: `url(${images[0].url})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            borderRadius: '50%'
-          }}
-        />
-        <Box></Box>
+        <Biography />
+        <ComponentIcon />
       </Box>
     </Box>
   )
