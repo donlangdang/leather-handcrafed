@@ -18,7 +18,7 @@ function NavBar() {
   return (
     <Box
       sx={{
-        height: '9vh',
+        height: '4rem',
         width: '100%',
         display: 'flex',
         alignItems: 'center',
