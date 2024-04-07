@@ -2,6 +2,8 @@ import Box from '@mui/material/Box'
 import ComponentIcon from './componentIcon/ComponentIcon'
 import Biography from './biographi/Biography'
 import Script from './script/Script'
+import Title from './title/Title'
+import GridImages from './gridImage/GridImage'
 
 
 function AboutUs() {
@@ -34,6 +36,8 @@ function AboutUs() {
         <ComponentIcon />
       </Box>
       <Script />
+      <Title />
+      <GridImages />
     </Box>
   )
 }
