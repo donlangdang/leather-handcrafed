@@ -12,7 +12,6 @@ import LearnMore from '~/learnMore/LearnMore.jsx'
 import App from '~/App.jsx'
 import theme from '~/theme.js'
 import Home from '~/home/Home.jsx'
-import images from '~/apis/images.jsx'
 import AboutUs from '~/aboutUs/AboutUs.jsx'
 
 
@@ -25,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home images={images} />
+        element: <Home />
       },
       {
         path: '/leanrmore',

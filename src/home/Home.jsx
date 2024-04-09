@@ -1,10 +1,10 @@
 import BannerSlider from './bannerSlider/BannerSlider'
 import Content from './content/Content'
 
-function Home({ images }) {
+function Home() {
   return (
     <>
-      <BannerSlider images={images} />
+      <BannerSlider />
       <Content />
     </>
   )
