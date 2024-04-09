@@ -1,16 +1,75 @@
 import Box from '@mui/material/Box'
+import Grid from '@mui/material/Unstable_Grid2'
 
 function GridImages() {
   return (
-    <Box
+    <Grid
+      container spacing={2}
       sx={{
-        color: 'white',
-        width: '75%',
-        bgcolor: '#333'
+        width: '80%'
       }}
     >
-      asd
-    </Box>
+      <Grid
+        xs={4}
+        sx={{
+          bgcolor: '#333',
+          height: '100px',
+          textAlign: 'center'
+        }}
+      >
+        absolute
+      </Grid>
+      <Grid
+        xs={4}
+        sx={{
+          bgcolor: '#333',
+          height: '100px',
+          textAlign: 'center'
+        }}
+      >
+        absolute
+      </Grid>
+      <Grid
+        xs={4}
+        sx={{
+          bgcolor: '#333',
+          height: '100px',
+          textAlign: 'center'
+        }}
+      >
+        absolute
+      </Grid>
+      <Grid
+        xs={4}
+        sx={{
+          bgcolor: '#333',
+          height: '100px',
+          textAlign: 'center'
+        }}
+      >
+        absolute
+      </Grid>
+      <Grid
+        xs={4}
+        sx={{
+          bgcolor: '#333',
+          height: '100px',
+          textAlign: 'center'
+        }}
+      >
+        absolute
+      </Grid>
+      <Grid
+        xs={4}
+        sx={{
+          bgcolor: '#333',
+          height: '100px',
+          textAlign: 'center'
+        }}
+      >
+        absolute
+      </Grid>
+    </Grid>
   )
 }
 

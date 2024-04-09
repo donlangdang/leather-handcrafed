@@ -6,6 +6,7 @@ import Cards from './cards/Cards'
 import { animation } from '~/components/animation/Animation'
 import { useMediaQuery } from '@mui/material'
 import { Box, ButtonBase } from '@mui/material'
+import images from '~/apis/images'
 // import { keyframes } from '@mui/material'
 
 
@@ -19,7 +20,7 @@ import { Box, ButtonBase } from '@mui/material'
 //   }
 // `
 
-function BannerSlider({ images }) {
+function BannerSlider() {
 
   const [currentImage, setCurrentImage] = useState(0)
   const [currentAnimation, setCurrentAnimation] = useState()
