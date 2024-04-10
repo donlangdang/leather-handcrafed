@@ -11,7 +11,7 @@ function AboutUs() {
     <Box
       sx={{
         width: '100%',
-        height: '3000px',
+        height: 'auto',
         bgcolor: 'black',
         display: 'flex',
         alignItems: 'center',
