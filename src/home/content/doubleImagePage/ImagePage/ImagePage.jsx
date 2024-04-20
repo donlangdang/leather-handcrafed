@@ -6,17 +6,17 @@ import { useInView } from 'react-intersection-observer'
 const cardKeyframes = keyframes`
   from {
     opacity: 0;
-    transform: translate(0, 50%)
+    transform: scale(1.2)
   }
   to {
     opacity: 1;
-    transform: translate(0, 0)
+    transform: scale(1)
   }
 `
 function ImagePage({ imageUrl, mobile }) {
 
   const { ref, inView } = useInView({
-    threshold: 0.3,
+    threshold: 0,
     triggerOnce: true
   })
 
@@ -39,21 +39,19 @@ function ImagePage({ imageUrl, mobile }) {
           }
         }}
       >
-        { inView &&
-          <>
-            <ButtonAndProduct imageUrl={imageUrl} mobile={mobile} />
-            <Box
-              component='img'
-              src={imageUrl.url}
-              alt="Đây là ảnh"
-              sx={{
-                width: '100%',
-                height: '100%',
-                animation: `${cardKeyframes} 1s ease-in-out`
-              }}
-            />
-          </>
-        }
+        <ButtonAndProduct imageUrl={imageUrl} mobile={mobile} />
+        <Box
+          sx={{
+            width: '100%',
+            height: '100%',
+            animation: inView ? `${cardKeyframes} 0.5s ease-in-out 1 forwards` : '',
+            transform: 'scale(1.2)',
+            // transition: 'transform 0.5s'
+          }}
+          component='img'
+          src={imageUrl.url}
+          alt="Đây là ảnh"
+        />
       </Box>
     </Box>
   )
