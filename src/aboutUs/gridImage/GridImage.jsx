@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box'
-import Grid from '@mui/material/Unstable_Grid2'
 import BoxImage from './boxImages/BoxImage'
 
 
@@ -8,13 +7,15 @@ function GridImages() {
     <Box
       sx={{
         width: '75%',
-        height: 'auto',
-        overflow: 'clip'
+        height: 'auto'
       }}
     >
-      <Grid
-        container
-        spacing={4}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'auto auto auto',
+          gap: 4
+        }}
       >
         <BoxImage />
         <BoxImage />
@@ -22,7 +23,7 @@ function GridImages() {
         <BoxImage />
         <BoxImage />
         <BoxImage />
-      </Grid>
+      </Box>
     </Box>
   )
 }
