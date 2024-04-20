@@ -38,6 +38,7 @@ function AboutUs() {
       <Script />
       <Title />
       <GridImages />
+      <Box>hello cacs ban</Box>
     </Box>
   )
 }
