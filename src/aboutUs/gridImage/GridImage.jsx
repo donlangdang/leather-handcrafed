@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
 import BoxImage from './boxImages/BoxImage'
+import imagesGridAboutUs from '~/apis/imagesGridAboutUs'
 
 
 function GridImages() {
@@ -17,12 +18,9 @@ function GridImages() {
           gap: 4
         }}
       >
-        <BoxImage />
-        <BoxImage />
-        <BoxImage />
-        <BoxImage />
-        <BoxImage />
-        <BoxImage />
+        {imagesGridAboutUs.map((gridImage) => (
+          <BoxImage gridImage={gridImage} key={gridImage.title} />
+        ))}
       </Box>
     </Box>
   )

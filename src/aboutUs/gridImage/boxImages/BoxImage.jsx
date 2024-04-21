@@ -1,13 +1,19 @@
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
-import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import { useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close'
 import { DialogActions, DialogContent, DialogContentText } from '@mui/material'
+import Slide from '@mui/material/Slide'
+import * as React from 'react'
 
 
-function BoxImage() {
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />
+})
+
+
+function BoxImage({ gridImage }) {
 
   const [open, setOpen] = useState(false)
   const handleOpen = () => {
@@ -43,30 +49,50 @@ function BoxImage() {
             transform: 'scale(1.1)'
           }
         }}
-        src='http://localhost:5000/src/assets/image/2.jpg'
+        src={gridImage.url}
       />
       <Dialog
+        TransitionComponent={Transition}
+        fullScreen
         open={open}
         onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        sx={{
-          // bgcolor: 'black'
-        }}
       >
-        <CloseIcon
+        <Box
           sx={{
-            cursor: 'pointer',
-            position: 'absolute',
-            top: '100%'
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            position: 'relative',
+            bgcolor: 'black',
+            height: '100vh'
           }}
-          fontSize='large'
-          onClick={handleClose}
-        />
-        <DialogTitle id="alert-dialog-title">ảnh 1</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">anh 11111111111111</DialogContentText>
-        </DialogContent>
+        >
+          <CloseIcon
+            sx={{
+              height: '3rem',
+              width: '3rem',
+              cursor: 'pointer',
+              position: 'relative',
+              right: '-17.5%',
+              transform: 'translate(-50%, 0 )',
+              color: 'white'
+            }}
+            fontSize='large'
+            onClick={handleClose}
+          />
+          <Box
+            component='img'
+            src={gridImage.url}
+            sx={{
+              height:'auto',
+              width: '35%',
+              objectFit: 'contain',
+              objectPosition: 'center',
+              aspectRatio: '3/4',
+            }}
+          />
+        </Box>
       </Dialog>
     </Box>
   )
