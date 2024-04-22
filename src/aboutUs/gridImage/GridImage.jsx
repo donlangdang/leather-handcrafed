@@ -18,8 +18,8 @@ function GridImages() {
           gap: 4
         }}
       >
-        {imagesGridAboutUs.map((gridImage) => (
-          <BoxImage gridImage={gridImage} key={gridImage.title} />
+        {imagesGridAboutUs.map((gridImage, index) => (
+          <BoxImage index={index} gridImage={gridImage} key={gridImage.title} />
         ))}
       </Box>
     </Box>
