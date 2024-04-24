@@ -8,7 +8,8 @@ function GridImages() {
     <Box
       sx={{
         width: '75%',
-        height: 'auto'
+        height: 'auto',
+        marginBottom: '8rem'
       }}
     >
       <Box

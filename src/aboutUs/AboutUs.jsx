@@ -4,6 +4,7 @@ import Biography from './biographi/Biography'
 import Script from './script/Script'
 import Title from './title/Title'
 import GridImages from './gridImage/GridImage'
+import WorkHard from './workHard/WorkHard'
 
 
 function AboutUs() {
@@ -38,7 +39,7 @@ function AboutUs() {
       <Script />
       <Title />
       <GridImages />
-      <Box>hello cacs ban</Box>
+      <WorkHard />
     </Box>
   )
 }
