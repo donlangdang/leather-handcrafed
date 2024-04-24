@@ -8,7 +8,7 @@ function WorkHard() {
         color: 'white'
       }}
     >
-      work hard
+      work hard aaaaa
     </Box>
   )
 }
