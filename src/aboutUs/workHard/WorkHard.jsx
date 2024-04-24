@@ -1,7 +1,6 @@
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
-import StraightIcon from '@mui/icons-material/Straight'
 
 
 function WorkHard() {
