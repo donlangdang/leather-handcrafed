@@ -119,15 +119,17 @@ function CenterNavbar({ trigger }) {
           Giới Thiệu
         </MyButton>
       </Link>
-      <MyButton
-        sx={{
-          '&::after': {
-            background: trigger ? 'black' : 'white'
-          }
-        }}
-      >
-        Liên Hệ
-      </MyButton>
+      <Link to='/contact' style={{ color : trigger ? 'black' : 'white' }}>
+        <MyButton
+          sx={{
+            '&::after': {
+              background: trigger ? 'black' : 'white'
+            }
+          }}
+        >
+          Liên Hệ
+        </MyButton>
+      </Link>
     </Box>
   )
 }

@@ -13,6 +13,7 @@ import App from '~/App.jsx'
 import theme from '~/theme.js'
 import Home from '~/home/Home.jsx'
 import AboutUs from '~/aboutUs/AboutUs.jsx'
+import Contact from './contact/Contact'
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/aboutus',
         element: <AboutUs />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
       }
     ]
   }
