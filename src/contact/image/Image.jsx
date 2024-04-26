@@ -9,7 +9,16 @@ function Image() {
         borderRight: '1px Solid black'
       }}
     >
-      image
+      <Box
+        component='img'
+        src='http://localhost:5000/src/assets/image/dacbiet.jpg'
+        sx={{
+          height: '100%',
+          width: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center'
+        }}
+      />
     </Box>
   )
 }

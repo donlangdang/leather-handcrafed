@@ -1,4 +1,7 @@
+import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
+import MyButton from '~/components/navBar/myButtom'
+import Request from './request/Request'
 
 function ContactUs() {
   return (
@@ -9,7 +12,44 @@ function ContactUs() {
         borderRight: '1px Solid black'
       }}
     >
-      contact us
+      <Box
+        sx={{
+          height: '100%',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          flexDirection: 'column',
+          padding: '3rem'
+        }}
+      >
+        <Typography variant='h4'
+          sx={{
+            fontWeight: '500'
+          }}
+        >
+          Liên Hệ Với Chúng Tôi
+        </Typography>
+        <Request />
+        <Box
+          sx={{
+            marginTop: '0.35rem'
+          }}
+        >
+          <MyButton
+            sx={{
+              border: '2px solid black',
+              padding: '1rem 1.5rem',
+              fontWeight: '700',
+              '&::after': {
+                bottom: '30%',
+                width: '70%'
+              }
+            }}
+          >
+            Gởi Tin Nhắn
+          </MyButton>
+        </Box>
+      </Box>
     </Box>
   )
 }
