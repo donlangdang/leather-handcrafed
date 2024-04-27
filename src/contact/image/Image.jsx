@@ -1,24 +1,20 @@
 import Box from '@mui/material/Box'
 
-function Image() {
+function Image({ mobile }) {
   return (
     <Box
       sx={{
-        width: '50%',
-        height: '100%',
-        borderRight: '1px Solid black'
+        backgroundImage: 'url(http://localhost:5000/src/assets/image/dacbiet.jpg)',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        flex: 1,
+        aspectRatio: '3/4',
+        height: 'auto',
+        width: '100%'
       }}
     >
-      <Box
-        component='img'
-        src='http://localhost:5000/src/assets/image/dacbiet.jpg'
-        sx={{
-          height: '100%',
-          width: '100%',
-          objectFit: 'cover',
-          objectPosition: 'center'
-        }}
-      />
+
     </Box>
   )
 }
