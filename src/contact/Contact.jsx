@@ -2,13 +2,17 @@ import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 import ContactUs from './contactUs/ContactUs'
 import Image from './image/Image'
+import { useMediaQuery } from '@mui/material'
 
 
 function Contact() {
+
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+
   return (
     <Box
       sx={{
-        height: '100vh',
+        height: mobile ? '110vh' : '100vh',
         width: '100%',
         display: 'flex',
         alignItems: 'center',
@@ -19,15 +23,19 @@ function Contact() {
       <Paper
         elevation={24}
         sx={{
-          height: '70%',
-          width: '60%',
+          height: mobile ? 'calc(100vh - 4rem)' : '70%',
+          width: mobile ? '90%' : '60%',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          overflow: 'clip',
+          ...(mobile && {
+            flexDirection: 'column'
+          })
         }}
       >
-        <ContactUs />
-        <Image />
+        <ContactUs mobile={mobile} />
+        <Image mobile={mobile} />
       </Paper>
     </Box>
   )

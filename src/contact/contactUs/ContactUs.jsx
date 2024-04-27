@@ -3,13 +3,14 @@ import Box from '@mui/material/Box'
 import MyButton from '~/components/navBar/myButtom'
 import Request from './request/Request'
 
-function ContactUs() {
+function ContactUs({ mobile }) {
   return (
     <Box
       sx={{
-        width: '50%',
+        width: mobile ? '100%' : '50%',
         height: '100%',
-        borderRight: '1px Solid black'
+        flex: '1',
+        aspectRatio: '3/4'
       }}
     >
       <Box
