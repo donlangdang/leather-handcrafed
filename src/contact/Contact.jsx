@@ -12,25 +12,28 @@ function Contact() {
   return (
     <Box
       sx={{
-        height: mobile ? '110vh' : '100vh',
+        height: mobile ? '150vh' : '100vh',
         width: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        bgcolor: '#454545'
+        bgcolor: mobile ? 'black' : '#454545',
+        position: 'relative'
       }}
     >
       <Paper
         elevation={24}
         sx={{
-          height: mobile ? 'calc(100vh - 4rem)' : '70%',
-          width: mobile ? '90%' : '60%',
+          height: mobile ? 'calc(100% - 4rem)' : '70%',
+          width: mobile ? '95%' : '60%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           overflow: 'clip',
           ...(mobile && {
-            flexDirection: 'column'
+            flexDirection: 'column',
+            position: 'absolute',
+            top: '4rem'
           })
         }}
       >

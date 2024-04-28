@@ -23,7 +23,7 @@ function ContactUs({ mobile }) {
           padding: '3rem'
         }}
       >
-        <Typography variant='h4'
+        <Typography variant= {mobile ? 'h5' : 'h4'}
           sx={{
             fontWeight: '500'
           }}
@@ -41,6 +41,7 @@ function ContactUs({ mobile }) {
               border: '2px solid black',
               padding: '1rem 1.5rem',
               fontWeight: '700',
+              fontSize: '0.75rem',
               '&::after': {
                 bottom: '30%',
                 width: '70%'
