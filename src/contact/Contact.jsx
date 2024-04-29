@@ -12,7 +12,7 @@ function Contact() {
   return (
     <Box
       sx={{
-        height: mobile ? '150vh' : '100vh',
+        height: mobile ? '170vh' : '100vh',
         width: '100%',
         display: 'flex',
         alignItems: 'center',

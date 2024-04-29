@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
 
-function Image({ mobile }) {
+function Image() {
   return (
     <Box
       sx={{
