@@ -39,8 +39,8 @@ function ContactUs({ mobile }) {
           <MyButton
             sx={{
               border: '2px solid black',
-              padding: '1rem 1.5rem',
-              fontWeight: '700',
+              padding: '0.8rem 1.2rem',
+              fontWeight: '500',
               fontSize: '0.75rem',
               '&::after': {
                 bottom: '30%',

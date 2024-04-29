@@ -27,7 +27,7 @@ const leftBars = [
   },
   {
     name: 'Liên Hệ',
-    route: '/'
+    route: '/contact'
   }
 ]
 
@@ -60,9 +60,7 @@ function ResponsiveMenu() {
               <ListItemText primaryTypographyProps={{ style: { fontWeight: '500' } }} primary={leftBar.name} />
             </Link>
           </ListItem>
-        )
-        )
-        }
+        ))}
       </List>
       <Divider />
     </Box>

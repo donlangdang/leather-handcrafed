@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box'
+import { useMediaQuery } from '@mui/material'
 import ComponentIcon from './componentIcon/ComponentIcon'
 import Biography from './biographi/Biography'
 import Script from './script/Script'
@@ -8,6 +9,9 @@ import WorkHard from './workHard/WorkHard'
 
 
 function AboutUs() {
+
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+
   return (
     <Box
       sx={{
