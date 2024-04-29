@@ -13,7 +13,8 @@ function DialogImages({
   handleClose,
   handleNextImage,
   handlePrevImage,
-  nextImageIndex
+  nextImageIndex,
+  mobile
 }) {
   return (
     <Dialog
@@ -39,8 +40,8 @@ function DialogImages({
             width: '2.5rem',
             cursor: 'pointer',
             position: 'relative',
-            right: '-17.5%',
-            transform: 'translate(-50%, 0 )',
+            right: mobile ? '-50%' : '-17.5%',
+            transform: mobile ? 'translate(-100%, 0 )' : 'translate(-50%, 0 )',
             color: 'white'
           }}
           fontSize='large'
@@ -55,11 +56,18 @@ function DialogImages({
           }}
         >
           <IconButton onClick={handlePrevImage}>
-            <ChevronLeftIcon fontSize='large' sx={{ color: 'white', height: '2.5rem', width: '2.5rem' }}/>
+            <ChevronLeftIcon
+              fontSize='large'
+              sx={{
+                color: 'white',
+                height: mobile ? '1rem' : '2.5rem',
+                width: mobile ? '1rem' : '2.5rem'
+              }}
+            />
           </IconButton>
           <Box
             sx={{
-              width: '35%',
+              width: mobile ? '100%' : '35%',
               height:'auto',
               overflow: 'clip',
               aspectRatio: '3/4'
@@ -80,7 +88,14 @@ function DialogImages({
             />
           </Box>
           <IconButton onClick={handleNextImage}>
-            <ChevronRightIcon fontSize='large' sx={{ color: 'white', height: '2.5rem', width: '2.5rem' }}/>
+            <ChevronRightIcon
+              fontSize='large'
+              sx={{
+                color: 'white',
+                height: mobile ? '1rem' : '2.5rem',
+                width: mobile ? '1rem' : '2.5rem'
+              }}
+            />
           </IconButton>
         </Box>
       </Box>

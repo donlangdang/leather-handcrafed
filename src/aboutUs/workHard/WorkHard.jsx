@@ -3,15 +3,16 @@ import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
 
 
-function WorkHard() {
+function WorkHard({ mobile }) {
   return (
     <Box
       sx={{
         color: '#f7d7c8',
-        width: '50%',
+        width: mobile ? '100%' : '50%',
         height: 'auto',
         textAlign: 'center',
-        marginBottom: '8rem'
+        marginBottom: '8rem',
+        ...(mobile && { padding: '0 1rem 0 1rem' })
       }}
     >
       <Typography

@@ -1,17 +1,18 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
-function Script() {
+function Script({ mobile }) {
   return (
     <Box
       sx={{
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        width: '70%',
+        width: mobile ? '100%' : '70%',
         height: 'auto',
-        gap: 2,
-        paddingBottom: '8rem'
+        gap: mobile ? 6 : 2,
+        padding: mobile ? '0rem 1rem 8rem 1rem' : '8rem',
+        ...(mobile && { flexDirection: 'column' })
       }}
     >
       <Box
@@ -24,7 +25,7 @@ function Script() {
         }}
       >
         <Typography
-          variant='h4'
+          variant={mobile ? 'h5' : 'h4'}
           gutterBottom
           sx={{
             fontWeight:  '500',
