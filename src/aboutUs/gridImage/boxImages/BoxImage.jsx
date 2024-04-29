@@ -34,7 +34,7 @@ const prevAnimationImages = keyframes`
   }
 `
 
-function BoxImage({ index }) {
+function BoxImage({ index, mobile }) {
 
   const [open, setOpen] = useState(false)
   const [nextImageIndex, setNextImageIndex] = useState(index)
@@ -93,6 +93,7 @@ function BoxImage({ index }) {
         handleNextImage={handleNextImage}
         handlePrevImage={handlePrevImage}
         nextImageIndex={nextImageIndex}
+        mobile={mobile}
       />
     </Box>
   )

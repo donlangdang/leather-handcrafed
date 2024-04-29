@@ -22,7 +22,8 @@ function AboutUs() {
         alignItems: 'center',
         justifyContent: 'flex-start',
         flexDirection: 'column',
-        paddingTop: '5rem'
+        paddingTop: '5rem',
+        overflow: 'hidden'
       }}
     >
       <Box
@@ -31,19 +32,19 @@ function AboutUs() {
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
-          width: '50%',
+          width: mobile ? '100%' : '50%',
           height: 'auto',
           gap: 2,
-          paddingBottom: '8rem'
+          padding: mobile ? '0rem 1rem 8rem 1rem' : '8rem'
         }}
       >
         <Biography />
         <ComponentIcon />
       </Box>
-      <Script />
-      <Title />
-      <GridImages />
-      <WorkHard />
+      <Script mobile={mobile} />
+      <Title mobile={mobile} />
+      <GridImages mobile={mobile} />
+      <WorkHard mobile={mobile} />
     </Box>
   )
 }

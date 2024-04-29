@@ -3,15 +3,15 @@ import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
 import StraightIcon from '@mui/icons-material/Straight'
 
-function Title() {
+function Title({ mobile }) {
   return (
     <Box
       sx={{
         color: '#f7d7c8',
-        width: '50%',
+        width: mobile ? '100%' : '50%',
         height: 'auto',
         textAlign: 'center',
-        marginBottom: '8rem'
+        padding: mobile ? '0rem 1rem 8rem 1rem' : '8rem'
       }}
     >
       <Typography
