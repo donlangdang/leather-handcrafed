@@ -14,6 +14,7 @@ import theme from '~/theme.js'
 import Home from '~/home/Home.jsx'
 import AboutUs from '~/aboutUs/AboutUs.jsx'
 import Contact from '~/contact/Contact'
+import Product from '~/product/Product'
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
+      },
+      {
+        path: '/product',
+        element: <Product />
       }
     ]
   }

@@ -6,6 +6,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import Box from '@mui/material/Box'
 import { Link } from 'react-router-dom'
 import MyButton from '~/components/navBar/myButtom'
+import { IconButton } from '@mui/material'
 
 function CenterNavbar({ trigger }) {
 
@@ -43,29 +44,48 @@ function CenterNavbar({ trigger }) {
             Trang Chủ
         </MyButton>
       </Link>
-      <MyButton
+      <Box
         sx={{
-          '&::after': {
-            background: trigger ? 'black' : 'white'
-          }
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
-        // id="basic-menu-items"
-        // aria-controls={open ? 'my-button-items' : undefined}
-        // aria-haspopup="true"
-        // aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
       >
-        Sản Phẩm
-        <KeyboardArrowDownIcon fontSize='small' />
-      </MyButton>
+        <Link to='/product' style={{ color : trigger ? 'black' : 'white' }}>
+          <MyButton
+            sx={{
+              marginRight: 0,
+              '&::after': {
+                background: trigger ? 'black' : 'white'
+              }
+            }}
+            id="basic-menu-items"
+            aria-controls={open ? 'my-button-items' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+          >
+            Sản Phẩm
+          </MyButton>
+        </Link>
+        <IconButton sx={{ paddingRight: 0 }} onMouseOver={handleClick}>
+          <KeyboardArrowDownIcon
+            sx={{
+              cursor: 'pointer',
+              color: trigger ? 'black' : 'white'
+            }}
+            fontSize='small'
+            onClick={handleClick}
+          />
+        </IconButton>
+      </Box>
       <Menu
-        // id="my-button-items"
+        id="my-button-items"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        // MenuListProps={{
-        //   'aria-labelledby': 'basic-menu-items'
-        // }}
+        MenuListProps={{
+          'aria-labelledby': 'basic-menu-items'
+        }}
       >
         <MenuItem
           onClick={handleClose}
