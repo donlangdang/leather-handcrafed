@@ -1,8 +1,10 @@
-
+import Box from '@mui/material/Box'
 
 function GridProduct() {
   return (
-    <div>GridProduct</div>
+    <Box>
+      <div>GridProduct</div>
+    </Box>
   )
 }
 
