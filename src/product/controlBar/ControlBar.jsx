@@ -17,7 +17,8 @@ function ControlBar() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: 2
+          gap: 2,
+          fontSize: '0.875rem'
         }}
       >
         <Typography>Women</Typography>
