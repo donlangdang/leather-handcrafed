@@ -1,7 +1,20 @@
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper'
+import { useState } from 'react'
+import MyButton from '~/components/navBar/myButtom'
 
 function ControlBar() {
+
+  const [showMenu, setShowMenu] = useState(false)
+
+  const handleMouseHover = () => {
+    setShowMenu(true)
+  }
+  const handleMouseLeave = () => {
+    setShowMenu(false)
+  }
+
   return (
     <Box
       sx={{
@@ -33,7 +46,49 @@ function ControlBar() {
           gap:  2
         }}
       >
-        <Typography>CATEGORY</Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column'
+          }}
+        >
+          <MyButton
+            onMouseEnter={handleMouseHover}
+            onMouseLeave={handleMouseLeave}
+            sx={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              position: 'relative',
+              fontSize: '1rem',
+              fontWeight: '400'
+            }}
+          >
+            CATEGORY
+            {showMenu && (
+              <Paper
+                sx={{
+                  width: '8rem',
+                  height: 'auto',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  position: 'absolute',
+                  top: '1.5rem',
+                  gap: 1
+                }}
+              >
+                <MyButton>Item 1</MyButton>
+                <MyButton>Item 2</MyButton>
+                <MyButton>Item 3</MyButton>
+              </Paper>
+            )}
+          </MyButton>
+        </Box>
         <Typography>FILTERS</Typography>
         <Typography>Sort by: </Typography>
       </Box>
