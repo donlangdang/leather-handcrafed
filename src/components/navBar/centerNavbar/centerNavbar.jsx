@@ -5,7 +5,18 @@ import Box from '@mui/material/Box'
 import { Link } from 'react-router-dom'
 import { IconButton } from '@mui/material'
 import Paper from '@mui/material/Paper'
+import { keyframes } from '@mui/material'
 import MyButton from '~/components/navBar/myButtom'
+
+
+const paperKeyframes = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
 
 function CenterNavbar({ trigger }) {
 
@@ -78,7 +89,8 @@ function CenterNavbar({ trigger }) {
                 flexDirection: 'column',
                 position: 'absolute',
                 top: '2rem',
-                gap: 1.5
+                gap: 1.5,
+                animation: `${paperKeyframes} 0.5s ease-in-out`
               }}
             >
               <MyButton>Ví Da, Ví Zip</MyButton>
