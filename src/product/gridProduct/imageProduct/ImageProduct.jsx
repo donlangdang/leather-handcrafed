@@ -3,7 +3,7 @@ import './imageProduct.css'
 import { Typography } from '@mui/material'
 import MyButton from '~/components/navBar/myButtom'
 
-function ImageProduct({ productGridImage, index }) {
+function ImageProduct({ productGridImage, index, mobile }) {
 
   const ImageBannerGridProduct67 = (index) => {
     if ((index === 6) && ((index + 1) === 7)) {
@@ -29,8 +29,8 @@ function ImageProduct({ productGridImage, index }) {
         cursor: 'pointer',
         ...(ImageBannerGridProduct67(index) &&
           {
-            gridColumnStart: '3',
-            gridColumnEnd: '5',
+            gridColumnStart: mobile ? '1' : '3',
+            gridColumnEnd: mobile ? '3' : '5',
             cursor: 'default'
           }
         ),
@@ -44,7 +44,7 @@ function ImageProduct({ productGridImage, index }) {
       }}
     >
       <Box
-        className="parent"
+        className={mobile ? '': 'parent'}
         sx={{
           height: '100%',
           width: '100%',
@@ -52,14 +52,20 @@ function ImageProduct({ productGridImage, index }) {
           transition: 'height 0.2s',
           bgcolor: 'white',
           boxSizing: 'border-box',
+          overflow: mobile ? 'hidden' : 'visible',
           ...(!ImageBannerGridProduct67(index) &&
             !ImageBannerGridProduct1213(index) &&
             {
               '&:hover': {
-                height: '125%',
+                height: mobile ? '100%' : '125%',
                 zIndex: '100',
-                border: '2px solid black'
+                border: '1px solid black'
               }
+            }
+          ),
+          ...(mobile &&
+            {
+              border: '1px solid black'
             }
           )
         }}
@@ -69,47 +75,64 @@ function ImageProduct({ productGridImage, index }) {
           src={productGridImage.url}
           sx={{
             width: '100%',
-            height: '40rem',
+            height: (mobile && !ImageBannerGridProduct67(index) && !ImageBannerGridProduct1213(index)) ?
+              'auto' :
+              (mobile ? '20rem' : '40rem'),
+            ...(mobile &&
+              ImageBannerGridProduct67(index) &&
+              ImageBannerGridProduct1213(index) &&
+              {
+                aspectRatio: 'auto'
+              }),
+            ...(mobile &&
+            {
+              aspectRatio: '1/1'
+            }),
             objectPosition: 'center',
             objectFit: 'cover'
           }}
         />
         {!ImageBannerGridProduct67(index) &&
           !ImageBannerGridProduct1213(index) &&
-            <Box
-              className="child"
+          <Box
+            className={mobile ? '': 'child'}
+            sx={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              ...(mobile &&
+                {
+                  display: 'flex'
+                }
+              )
+            }}
+          >
+            <Typography
+              variant='h6'
               sx={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column'
+                fontWeight: '400',
+                marginBottom: mobile ? '1.5rem' : '2rem',
+                textTransform: 'uppercase'
               }}
             >
-              <Typography
-                variant='h6'
-                sx={{
-                  fontWeight: '400',
-                  marginBottom: '2.5rem',
-                  textTransform: 'uppercase'
-                }}
-              >
-                {productGridImage.title}
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: '300',
-                  fontSize: '1.5rem'
-                }}
-              >
-                {productGridImage.price}
-              </Typography>
-              <MyButton
-                sx={{
-                  fontSize: '1rem'
-                }}
-              >
-                Shop This
-              </MyButton>
-            </Box>
+              {productGridImage.title}
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: '300',
+                fontSize: '1.5rem'
+              }}
+            >
+              {productGridImage.price}
+            </Typography>
+            <MyButton
+              sx={{
+                fontSize: '1rem'
+              }}
+            >
+              Shop This
+            </MyButton>
+          </Box>
         }
       </Box>
     </Box>

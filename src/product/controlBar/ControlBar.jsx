@@ -4,7 +4,7 @@ import Filters from './filter/Filters'
 import Category from './category/Category'
 
 
-function ControlBar() {
+function ControlBar({ mobile }) {
 
   return (
     <Box
@@ -26,8 +26,12 @@ function ControlBar() {
         }}
       >
         <Typography>Women</Typography>
-        <Typography>/</Typography>
-        <Typography>Ready-to-Wear for Women</Typography>
+        {!mobile &&
+          <>
+            <Typography>/</Typography>
+            <Typography>Ready-to-Wear for Women</Typography>
+          </>
+        }
       </Box>
       <Box
         sx={{

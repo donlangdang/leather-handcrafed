@@ -1,13 +1,13 @@
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-function BannerProduct() {
+function BannerProduct({ mobile }) {
   return (
     <Box
       sx={{
         height: 'auto',
         width: '100%',
-        aspectRatio: '19/9',
+        aspectRatio: mobile ? '3/5' : '19/9',
         backgroundImage: 'linear-gradient(0, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://localhost:5000/src/assets/image/contentBanner.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -23,14 +23,15 @@ function BannerProduct() {
           color: 'white',
           fontWeight: '300'
         }}
-        variant='h1'
+        variant={mobile ? 'h4' : 'h1'}
       >
         GIFTS FOR HER
       </Typography>
       <Typography
         sx={{
           color: 'white',
-          fontWeight: '400'
+          fontWeight: '400',
+          textAlign: 'center'
         }}
         variant='h6'
       >

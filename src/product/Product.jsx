@@ -1,9 +1,13 @@
 import Box from '@mui/material/Box'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import BannerProduct from './banner/BannerProduct'
 import ControlBar from './controlBar/ControlBar'
 import GridProduct from './gridProduct/GridProduct'
 
 function Product() {
+
+  const mobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+
   return (
     <Box
       sx={{
@@ -11,9 +15,9 @@ function Product() {
         width: '100%'
       }}
     >
-      <BannerProduct />
-      <ControlBar />
-      <GridProduct />
+      <BannerProduct mobile={mobile} />
+      <ControlBar mobile={mobile} />
+      <GridProduct mobile={mobile} />
     </Box>
   )
 }
