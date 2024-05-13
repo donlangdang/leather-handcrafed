@@ -7,13 +7,15 @@ function GridProduct() {
     <Box
       sx={{
         display: 'grid',
-        gridTemplateColumns: 'auto auto auto auto',
+        gridTemplateColumns: '1fr 1fr 1fr 1fr',
+        gridAutoRows: '40rem',
         width: '100%',
-        gap: 1
+        gap: 1,
+        padding: '0 0.5rem 1rem 0.5rem'
       }}
     >
-      {productGridImages.map((productGridImage) => (
-        <ImageProduct productGridImage={productGridImage} key={productGridImage.url} />
+      {productGridImages.map((productGridImage, index) => (
+        <ImageProduct productGridImage={productGridImage} index={index} key={index} />
       ))}
     </Box>
   )
