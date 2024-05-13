@@ -62,7 +62,8 @@ function Filters() {
               position: 'absolute',
               top: '1.5rem',
               gap: 1,
-              animation: `${paperKeyframes} 0.5s ease-in-out`
+              animation: `${paperKeyframes} 0.5s ease-in-out`,
+              zIndex: '120'
             }}
           >
             <MyButton>Item 1</MyButton>

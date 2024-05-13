@@ -7,7 +7,7 @@ function Product() {
   return (
     <Box
       sx={{
-        height: '3000px',
+        height: 'auto',
         width: '100%'
       }}
     >
