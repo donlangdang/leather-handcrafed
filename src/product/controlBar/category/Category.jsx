@@ -34,7 +34,7 @@ function Category() {
         flexDirection: 'column'
       }}
     >
-      <MyButton
+      <Box
         onMouseEnter={handleMouseHoverCategory}
         onMouseLeave={handleMouseLeaveCategory}
         sx={{
@@ -44,7 +44,8 @@ function Category() {
           position: 'relative',
           fontSize: '1rem',
           fontWeight: '400',
-          margin: '0'
+          margin: '0',
+          cursor: 'pointer'
         }}
       >
         <KeyboardArrowDownIcon fontSize='small' />
@@ -70,7 +71,7 @@ function Category() {
             <MyButton>Item 3</MyButton>
           </Paper>
         )}
-      </MyButton>
+      </Box>
     </Box>
   )
 }

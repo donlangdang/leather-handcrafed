@@ -15,6 +15,7 @@ import Home from '~/home/Home.jsx'
 import AboutUs from '~/aboutUs/AboutUs.jsx'
 import Contact from '~/contact/Contact'
 import Product from '~/product/Product'
+import ChiTietSanPham from '~/product/chiTietSanPham/ChiTietSanPham'
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/product',
         element: <Product />
+      },
+      {
+        path: '/product/:sanpham',
+        element: <ChiTietSanPham />
       }
     ]
   }
