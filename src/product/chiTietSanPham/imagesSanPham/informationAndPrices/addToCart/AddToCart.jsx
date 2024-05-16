@@ -6,13 +6,13 @@ function AddToCart() {
       sx={{
         width: '100%',
         height: '3rem',
-        bgcolor: '#e74c3c',
-        color: 'white',
+        color: 'black',
+        bgcolor: '#f5f5f5',
         fontWeight: '500',
         fontSize: '1.2rem',
         position: 'relative',
         boxSizing: 'border-box',
-        border: '1px solid black',
+        border: '2px solid black',
         '&::before': {
           content: '"THÊM VÀO GIỎ"',
           position: 'absolute',
@@ -30,8 +30,8 @@ function AddToCart() {
         },
         '&:hover::before': {
           width: '0',
-          border: '1px solid black',
-          content: '""'
+          content: '""',
+          fontSize: '0'
         }
       }}
     >
