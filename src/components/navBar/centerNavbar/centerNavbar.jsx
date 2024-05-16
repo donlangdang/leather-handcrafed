@@ -68,7 +68,12 @@ function CenterNavbar({ trigger }) {
             Sản Phẩm
           </MyButton>
         </Link>
-        <IconButton sx={{ paddingRight: 0 }}
+        <Box
+          sx={{
+            paddingRight: 0,
+            display: 'flex',
+            alignItems: 'center'
+          }}
           onMouseEnter={handleMouseHover}
           onMouseLeave={handleMouseLeave}
         >
@@ -77,7 +82,7 @@ function CenterNavbar({ trigger }) {
               cursor: 'pointer',
               color: trigger ? 'black' : 'white'
             }}
-            fontSize='small'
+            fontSize='medium'
           />
           {showMenu && (
             <Paper
@@ -88,9 +93,10 @@ function CenterNavbar({ trigger }) {
                 justifyContent: 'center',
                 flexDirection: 'column',
                 position: 'absolute',
-                top: '2rem',
+                top: '1.5rem',
                 gap: 1.5,
-                animation: `${paperKeyframes} 0.5s ease-in-out`
+                animation: `${paperKeyframes} 0.5s ease-in-out`,
+                padding: '0.5rem 0 0.5rem 0'
               }}
             >
               <MyButton>Ví Da, Ví Zip</MyButton>
@@ -99,7 +105,7 @@ function CenterNavbar({ trigger }) {
               <MyButton>Đồ Decor</MyButton>
             </Paper>
           )}
-        </IconButton>
+        </Box>
       </Box>
       <Link to='/aboutus' style={{ color : trigger ? 'black' : 'white' }}>
         <MyButton

@@ -35,7 +35,7 @@ function Filters() {
         flexDirection: 'column'
       }}
     >
-      <MyButton
+      <Box
         onMouseEnter={handleMouseHoverFilters}
         onMouseLeave={handleMouseLeaveFilters}
         sx={{
@@ -45,7 +45,8 @@ function Filters() {
           position: 'relative',
           fontSize: '1rem',
           fontWeight: '400',
-          margin: '0'
+          margin: '0',
+          cursor: 'pointer'
         }}
       >
         <KeyboardArrowDownIcon fontSize='small' />
@@ -71,7 +72,7 @@ function Filters() {
             <MyButton>Item 3</MyButton>
           </Paper>
         )}
-      </MyButton>
+      </Box>
     </Box>
   )
 }

@@ -2,6 +2,7 @@ import Box from '@mui/material/Box'
 import './imageProduct.css'
 import { Typography } from '@mui/material'
 import MyButton from '~/components/navBar/myButtom'
+import { Link } from 'react-router-dom'
 
 function ImageProduct({ productGridImage, index, mobile }) {
 
@@ -43,17 +44,18 @@ function ImageProduct({ productGridImage, index, mobile }) {
         )
       }}
     >
-      <Box
-        className={mobile ? '': 'parent'}
-        sx={{
-          height: '100%',
-          width: '100%',
-          position: 'relative',
-          transition: 'height 0.2s',
-          bgcolor: 'white',
-          boxSizing: 'border-box',
-          overflow: mobile ? 'hidden' : 'visible',
-          ...(!ImageBannerGridProduct67(index) &&
+      <Link to={`/product/${index}`} style={{ textDecoration: 'none', color: 'black' }}>
+        <Box
+          className={mobile ? '': 'parent'}
+          sx={{
+            height: '100%',
+            width: '100%',
+            position: 'relative',
+            transition: 'height 0.2s',
+            bgcolor: 'white',
+            boxSizing: 'border-box',
+            overflow: mobile ? 'hidden' : 'visible',
+            ...(!ImageBannerGridProduct67(index) &&
             !ImageBannerGridProduct1213(index) &&
             {
               '&:hover': {
@@ -62,37 +64,37 @@ function ImageProduct({ productGridImage, index, mobile }) {
                 border: '1px solid black'
               }
             }
-          ),
-          ...(mobile &&
+            ),
+            ...(mobile &&
             {
               border: '1px solid black'
             }
-          )
-        }}
-      >
-        <Box
-          component='img'
-          src={productGridImage.url}
-          sx={{
-            width: '100%',
-            height: (mobile && !ImageBannerGridProduct67(index) && !ImageBannerGridProduct1213(index)) ?
-              'auto' :
-              (mobile ? '20rem' : '40rem'),
-            ...(mobile &&
+            )
+          }}
+        >
+          <Box
+            component='img'
+            src={productGridImage.url}
+            sx={{
+              width: '100%',
+              height: (mobile && !ImageBannerGridProduct67(index) && !ImageBannerGridProduct1213(index)) ?
+                'auto' :
+                (mobile ? '20rem' : '40rem'),
+              ...(mobile &&
               ImageBannerGridProduct67(index) &&
               ImageBannerGridProduct1213(index) &&
               {
                 aspectRatio: 'auto'
               }),
-            ...(mobile &&
+              ...(mobile &&
             {
               aspectRatio: '1/1'
             }),
-            objectPosition: 'center',
-            objectFit: 'cover'
-          }}
-        />
-        {!ImageBannerGridProduct67(index) &&
+              objectPosition: 'center',
+              objectFit: 'cover'
+            }}
+          />
+          {!ImageBannerGridProduct67(index) &&
           !ImageBannerGridProduct1213(index) &&
           <Box
             className={mobile ? '': 'child'}
@@ -133,8 +135,9 @@ function ImageProduct({ productGridImage, index, mobile }) {
               Shop This
             </MyButton>
           </Box>
-        }
-      </Box>
+          }
+        </Box>
+      </Link>
     </Box>
   )
 }
