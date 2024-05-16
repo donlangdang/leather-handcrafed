@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
 import { useState } from 'react'
 import AddToCart from './addToCart/AddToCart'
+import Information from './information/Information'
 
 function InformationAndPrices({ imagesGridAboutUs }) {
 
@@ -86,6 +87,8 @@ function InformationAndPrices({ imagesGridAboutUs }) {
         />
       </Box>
       <AddToCart />
+      <Divider/>
+      <Information />
     </Box>
   )
 }
