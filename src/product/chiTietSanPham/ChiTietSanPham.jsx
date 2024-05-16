@@ -1,11 +1,12 @@
 import Box from '@mui/material/Box'
 import LinkBar from './linkBar/LinkBar'
+import ImagesSanPham from './imagesSanPham/ImagesSanPham'
 
 function ChiTietSanPham() {
   return (
     <Box
       sx={{
-        height: '3000px',
+        height: 'auto',
         width: '100%'
       }}
     >
@@ -17,6 +18,7 @@ function ChiTietSanPham() {
         }}
       />
       <LinkBar />
+      <ImagesSanPham />
     </Box>
   )
 }
