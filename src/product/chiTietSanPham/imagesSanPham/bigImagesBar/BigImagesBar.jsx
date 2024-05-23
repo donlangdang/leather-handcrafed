@@ -13,7 +13,7 @@ function BigImagesBar({ imagesGridAboutUs }) {
           src={imagesGridAboutU.url}
           sx={{
             width: '100%',
-            aspectRatio: '1/1',
+            aspectRatio: '4/3',
             objectFit: 'cover',
             objectPosition: 'center'
           }}
